@@ -1,0 +1,1911 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  />
+
+  <title>Samuel & Ixkaj · 19 XII 2026</title>
+
+  <meta
+    name="description"
+    content="Samuel & Ixkaj · 19 de diciembre de 2026"
+  />
+
+  <!-- =========================================================
+       TIPOGRAFÍAS
+       Cormorant Garamond = editorial / lujo
+       Italiana          = nombres
+       Montserrat        = información
+  ========================================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Italiana&family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* =========================================================
+       01 · RESET
+    ========================================================== */
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #273126;
+      color: #f7f2e8;
+      font-family: "Montserrat", sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    /* =========================================================
+       02 · PALETA PREMIUM
+    ========================================================== */
+
+    :root {
+      --olive-950: #151d16;
+      --olive-900: #1c281d;
+      --olive-800: #273126;
+      --olive-700: #3d4934;
+      --olive-600: #556047;
+      --olive-500: #70795b;
+
+      --ivory: #f8f3e8;
+      --ivory-soft: rgba(248, 243, 232, 0.82);
+      --ivory-muted: rgba(248, 243, 232, 0.62);
+
+      --champagne: #cdb477;
+      --champagne-light: #e1ce9b;
+      --champagne-soft: rgba(205, 180, 119, 0.55);
+
+      --white: #ffffff;
+
+      --shadow: rgba(10, 16, 11, 0.35);
+
+      --serif: "Cormorant Garamond", serif;
+      --display: "Italiana", serif;
+      --sans: "Montserrat", sans-serif;
+    }
+
+    /* =========================================================
+       03 · BARRA DE PROGRESO
+    ========================================================== */
+
+    .progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .progress-bar {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        var(--champagne),
+        var(--champagne-light)
+      );
+      transform-origin: left;
+    }
+
+    /* =========================================================
+       04 · ESCENA DE FONDO
+    ========================================================== */
+
+    .scene {
+      position: fixed;
+      inset: 0;
+      z-index: -10;
+      overflow: hidden;
+      background: var(--olive-900);
+    }
+
+    /*
+      IMPORTANTE:
+      Se mantiene background-image porque esta versión
+      es la que ya está funcionando correctamente con
+      lugar-boda.jpg.
+    */
+
+    .scene-photo {
+      position: absolute;
+      inset: -3%;
+
+      background-image: url("lugar-boda.jpg");
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+
+      transform: scale(1.045);
+
+      filter:
+        brightness(1.04)
+        saturate(0.88)
+        contrast(1.03);
+
+      will-change: transform, filter;
+    }
+
+    /* Velo olivo MUY sutil */
+
+    .olive-overlay {
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(68, 81, 52, 0.22),
+          rgba(28, 39, 29, 0.08)
+        );
+
+      opacity: 0.7;
+      mix-blend-mode: multiply;
+    }
+
+    /* Luz cálida de atardecer */
+
+    .warm-overlay {
+      position: absolute;
+      inset: 0;
+
+      background:
+        radial-gradient(
+          circle at 50% 12%,
+          rgba(255, 226, 166, 0.20),
+          rgba(255, 226, 166, 0.05) 28%,
+          transparent 55%
+        );
+
+      opacity: 0.9;
+    }
+
+    /* Vignette premium */
+
+    .vignette {
+      position: absolute;
+      inset: 0;
+
+      background:
+        radial-gradient(
+          ellipse at center,
+          transparent 34%,
+          rgba(15, 22, 16, 0.08) 63%,
+          rgba(11, 17, 12, 0.46) 100%
+        );
+
+      pointer-events: none;
+    }
+
+    /* =========================================================
+       05 · TEXTURA SUTIL
+    ========================================================== */
+
+    .grain {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      pointer-events: none;
+
+      opacity: 0.035;
+
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+    }
+
+    /* =========================================================
+       06 · ESTRUCTURA GENERAL
+    ========================================================== */
+
+    section {
+      position: relative;
+
+      min-height: 100svh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding:
+        clamp(90px, 12vw, 150px)
+        24px;
+    }
+
+    .container {
+      position: relative;
+
+      width: min(1100px, 100%);
+      margin: 0 auto;
+
+      text-align: center;
+      z-index: 2;
+    }
+
+    /* =========================================================
+       07 · MICRO DETALLES DE LUJO
+    ========================================================== */
+
+    .eyebrow {
+      font-family: var(--sans);
+
+      font-size: 10px;
+      line-height: 1.5;
+
+      letter-spacing: 0.36em;
+
+      text-transform: uppercase;
+
+      color: var(--champagne-light);
+
+      font-weight: 500;
+    }
+
+    .hairline {
+      width: 74px;
+      height: 1px;
+
+      margin:
+        25px
+        auto;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          var(--champagne),
+          transparent
+        );
+
+      opacity: 0.8;
+    }
+
+    .diamond {
+      width: 5px;
+      height: 5px;
+
+      margin: 0 auto;
+
+      background: var(--champagne);
+
+      transform: rotate(45deg);
+
+      box-shadow:
+        0 0 12px rgba(205, 180, 119, 0.35);
+    }
+
+    /* =========================================================
+       08 · HERO / PORTADA
+    ========================================================== */
+
+    .hero {
+      min-height: 100svh;
+
+      padding:
+        50px
+        24px
+        70px;
+
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+
+      left: 50%;
+      bottom: 0;
+
+      width: min(800px, 100%);
+      height: 1px;
+
+      transform: translateX(-50%);
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(205, 180, 119, 0.35),
+          transparent
+        );
+    }
+
+    .hero-content {
+      opacity: 0;
+
+      transform: translateY(20px);
+
+      animation:
+        heroReveal
+        1.5s
+        cubic-bezier(.2, .8, .2, 1)
+        0.15s
+        forwards;
+    }
+
+    @keyframes heroReveal {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-eyebrow {
+      margin-bottom: 24px;
+    }
+
+    .hero-names {
+      margin-top: 30px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      line-height: 0.74;
+    }
+
+    .hero-name {
+      font-family: var(--display);
+
+      font-size:
+        clamp(
+          5rem,
+          15vw,
+          10.5rem
+        );
+
+      font-weight: 400;
+
+      letter-spacing: -0.045em;
+
+      color: var(--ivory);
+
+      text-shadow:
+        0 5px 35px rgba(0, 0, 0, 0.25);
+    }
+
+    .hero-amp {
+      font-family: var(--serif);
+
+      font-size:
+        clamp(
+          2.5rem,
+          6vw,
+          4.5rem
+        );
+
+      font-weight: 300;
+      font-style: italic;
+
+      color: var(--champagne-light);
+
+      line-height: 1.2;
+
+      margin:
+        15px
+        0;
+    }
+
+    .hero-date {
+      margin-top: 46px;
+
+      font-family: var(--sans);
+
+      font-size: 11px;
+
+      letter-spacing: 0.40em;
+
+      text-transform: uppercase;
+
+      color: var(--ivory);
+
+      font-weight: 500;
+    }
+
+    .hero-bottom {
+      position: absolute;
+
+      left: 50%;
+      bottom: 26px;
+
+      transform: translateX(-50%);
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      gap: 10px;
+
+      color: var(--ivory-muted);
+
+      font-size: 8px;
+
+      letter-spacing: 0.32em;
+
+      text-transform: uppercase;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 42px;
+
+      background:
+        linear-gradient(
+          var(--champagne),
+          transparent
+        );
+
+      animation:
+        scrollPulse
+        2.2s
+        ease-in-out
+        infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%,
+      100% {
+        opacity: 0.25;
+        transform: scaleY(0.65);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scaleY(1);
+      }
+    }
+
+    /* =========================================================
+       09 · HISTORIA
+    ========================================================== */
+
+    .story {
+      min-height: 92svh;
+    }
+
+    .story-panel {
+      width: min(790px, 100%);
+
+      margin: 0 auto;
+
+      padding:
+        clamp(45px, 8vw, 80px)
+        clamp(25px, 7vw, 75px);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(27, 39, 28, 0.22),
+          rgba(27, 39, 28, 0.07)
+        );
+
+      border-top:
+        1px solid
+        rgba(248, 243, 232, 0.24);
+
+      border-bottom:
+        1px solid
+        rgba(205, 180, 119, 0.30);
+
+      box-shadow:
+        0 30px 100px
+        rgba(8, 13, 9, 0.18);
+
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+    }
+
+    .story-title {
+      margin-top: 22px;
+
+      font-family: var(--serif);
+
+      font-size:
+        clamp(
+          3.4rem,
+          7vw,
+          5.9rem
+        );
+
+      font-weight: 300;
+
+      line-height: 0.92;
+
+      color: var(--ivory);
+
+      text-shadow:
+        0 4px 25px rgba(0, 0, 0, 0.18);
+    }
+
+    .story-copy {
+      max-width: 640px;
+
+      margin:
+        35px
+        auto
+        0;
+
+      font-family: var(--serif);
+
+      font-size:
+        clamp(
+          1.3rem,
+          2.6vw,
+          1.65rem
+        );
+
+      line-height: 1.55;
+
+      font-weight: 300;
+
+      color: var(--ivory-soft);
+    }
+
+    .story-copy p + p {
+      margin-top: 22px;
+    }
+
+    .story-highlight {
+      color: var(--ivory);
+      font-weight: 500;
+    }
+
+    /* =========================================================
+       10 · LA BODA
+    ========================================================== */
+
+    .wedding {
+      min-height: 100svh;
+      text-align: center;
+    }
+
+    .wedding-number {
+      margin-top: 28px;
+
+      font-family: var(--display);
+
+      font-size:
+        clamp(
+          8rem,
+          23vw,
+          16rem
+        );
+
+      line-height: 0.70;
+
+      color: rgba(248, 243, 232, 0.96);
+
+      letter-spacing: -0.055em;
+
+      text-shadow:
+        0 8px 50px rgba(0, 0, 0, 0.23);
+    }
+
+    .wedding-month {
+      margin-top: 45px;
+
+      font-family: var(--serif);
+
+      font-size:
+        clamp(
+          2.2rem,
+          5vw,
+          4rem
+        );
+
+      font-weight: 400;
+      font-style: italic;
+
+      color: var(--champagne-light);
+    }
+
+    .wedding-year {
+      margin-top: 5px;
+
+      font-family: var(--sans);
+
+      font-size: 11px;
+
+      letter-spacing: 0.45em;
+
+      text-transform: uppercase;
+
+      color: var(--ivory-muted);
+    }
+
+    .wedding-time {
+      margin-top: 35px;
+
+      font-size:
+        clamp(
+          1.45rem,
+          3.2vw,
+          2.15rem
+        );
+
+      letter-spacing: 0.18em;
+
+      text-transform: uppercase;
+
+      color: var(--ivory);
+
+      font-weight: 600;
+
+      line-height: 1;
+    }
+
+    /* =========================================================
+       11 · CONTADOR
+    ========================================================== */
+
+    .countdown {
+      width: min(620px, 100%);
+
+      margin:
+        48px
+        auto
+        0;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 10px;
+    }
+
+    .count-item {
+      position: relative;
+
+      padding:
+        17px
+        8px;
+
+      border-left:
+        1px solid
+        rgba(205, 180, 119, 0.25);
+    }
+
+    .count-item:last-child {
+      border-right:
+        1px solid
+        rgba(205, 180, 119, 0.25);
+    }
+
+    .count-number {
+      display: block;
+
+      font-family: var(--serif);
+
+      font-size:
+        clamp(
+          2rem,
+          4vw,
+          2.8rem
+        );
+
+      font-weight: 400;
+
+      color: var(--ivory);
+    }
+
+    .count-label {
+      display: block;
+
+      margin-top: 3px;
+
+      font-size: 8px;
+
+      letter-spacing: 0.25em;
+
+      text-transform: uppercase;
+
+      color: var(--champagne);
+    }
+
+    /* =========================================================
+       12 · UBICACIÓN
+    ========================================================== */
+
+    .location {
+      min-height: 92svh;
+    }
+
+    .location-panel {
+      width: min(790px, 100%);
+
+      margin: 0 auto;
+
+      padding:
+        clamp(42px, 8vw, 75px)
+        clamp(24px, 7vw, 70px);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(28, 39, 29, 0.25),
+          rgba(28, 39, 29, 0.07)
+        );
+
+      border-top:
+        1px solid
+        rgba(248, 243, 232, 0.23);
+
+      border-bottom:
+        1px solid
+        rgba(205, 180, 119, 0.28);
+
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+    }
+
+    .location-title {
+      margin-top: 25px;
+
+      font-family: var(--serif);
+
+      font-size:
+        clamp(
+          2.35rem,
+          5vw,
+          3.8rem
+        );
+
+      font-weight: 400;
+
+      line-height: 1.05;
+
+      color: var(--ivory);
+    }
+
+    .location-address {
+      margin-top: 28px;
+
+      font-family: var(--serif);
+
+      font-size:
+        clamp(
+          1.2rem,
+          2.5vw,
+          1.45rem
+        );
+
+      line-height: 1.65;
+
+      color: var(--ivory-soft);
+    }
+
+    .location-reference {
+      margin-top: 19px;
+
+      font-size: 9px;
+
+      letter-spacing: 0.22em;
+
+      text-transform: uppercase;
+
+      color: var(--champagne);
+    }
+
+    .map-button {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      margin-top: 36px;
+
+      min-width: 190px;
+
+      padding:
+        15px
+        28px;
+
+      border:
+        1px solid
+        rgba(205, 180, 119, 0.68);
+
+      background:
+        rgba(38, 49, 38, 0.14);
+
+      color: var(--ivory);
+
+      text-decoration: none;
+
+      font-size: 9px;
+
+      letter-spacing: 0.27em;
+
+      text-transform: uppercase;
+
+      transition:
+        background 0.35s ease,
+        color 0.35s ease,
+        transform 0.35s ease,
+        border-color 0.35s ease;
+    }
+
+    .map-button:hover {
+      background: var(--champagne);
+
+      border-color: var(--champagne);
+
+      color: var(--olive-950);
+
+      transform: translateY(-2px);
+    }
+
+    /* =========================================================
+       13 · CIERRE
+    ========================================================== */
+
+    .closing {
+      min-height: 92svh;
+    }
+
+    .closing-label {
+      margin-bottom: 25px;
+    }
+
+    .closing-quote {
+      max-width: 820px;
+
+      margin: 0 auto;
+
+      font-family: var(--serif);
+
+      font-size:
+        clamp(
+          2.5rem,
+          6vw,
+          5rem
+        );
+
+      font-weight: 300;
+
+      font-style: italic;
+
+      line-height: 1.05;
+
+      color: var(--ivory);
+
+      text-shadow:
+        0 5px 30px rgba(0, 0, 0, 0.22);
+    }
+
+    .closing-names {
+      margin-top: 42px;
+
+      font-family: var(--display);
+
+      font-size:
+        clamp(
+          3.1rem,
+          7vw,
+          5.7rem
+        );
+
+      color: var(--ivory);
+
+      letter-spacing: -0.03em;
+    }
+
+    .closing-date {
+      margin-top: 12px;
+
+      font-family: var(--sans);
+
+      font-size: 9px;
+
+      letter-spacing: 0.38em;
+
+      text-transform: uppercase;
+
+      color: var(--champagne);
+    }
+
+    .closing-signature {
+      margin-top: 32px;
+
+      font-family: var(--serif);
+
+      font-size: 1.15rem;
+
+      font-style: italic;
+
+      color: var(--ivory-muted);
+    }
+
+    /* =========================================================
+       14 · FOOTER
+    ========================================================== */
+
+    footer {
+      position: relative;
+
+      padding:
+        30px
+        20px
+        55px;
+
+      text-align: center;
+    }
+
+    footer::before {
+      content: "";
+
+      display: block;
+
+      width: 70px;
+      height: 1px;
+
+      margin:
+        0
+        auto
+        25px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          var(--champagne),
+          transparent
+        );
+
+      opacity: 0.5;
+    }
+
+    footer p {
+      font-size: 8px;
+
+      letter-spacing: 0.32em;
+
+      text-transform: uppercase;
+
+      color: rgba(248, 243, 232, 0.42);
+    }
+
+    /* =========================================================
+       15 · REVEAL AL HACER SCROLL
+    ========================================================== */
+
+    .reveal {
+      opacity: 0;
+
+      transform: translateY(28px);
+
+      transition:
+        opacity 1s cubic-bezier(.2, .7, .2, 1),
+        transform 1s cubic-bezier(.2, .7, .2, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+
+      transform: translateY(0);
+    }
+
+    /* =========================================================
+       16 · DECORACIÓN LATERAL
+    ========================================================== */
+
+    .side-mark {
+      position: absolute;
+
+      width: 75px;
+      height: 75px;
+
+      opacity: 0.35;
+
+      pointer-events: none;
+    }
+
+    .side-mark::before,
+    .side-mark::after {
+      content: "";
+
+      position: absolute;
+
+      background: var(--champagne);
+    }
+
+    .side-mark::before {
+      width: 1px;
+      height: 55px;
+
+      top: 0;
+      right: 0;
+    }
+
+    .side-mark::after {
+      width: 55px;
+      height: 1px;
+
+      top: 0;
+      right: 0;
+    }
+
+    .mark-top {
+      top: 30px;
+      right: 30px;
+    }
+
+    .mark-bottom {
+      bottom: 30px;
+      left: 30px;
+
+      transform: rotate(180deg);
+    }
+
+    /* =========================================================
+       17 · TABLET / MOBILE
+    ========================================================== */
+
+    @media (max-width: 700px) {
+      section {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .hero {
+        padding-top: 45px;
+        padding-bottom: 65px;
+      }
+
+      .scene-photo {
+        background-position: center center;
+      }
+
+      .hero-eyebrow {
+        max-width: 310px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        line-height: 1.8;
+      }
+
+      .hero-name {
+        font-size:
+          clamp(
+            4.5rem,
+            21vw,
+            7rem
+          );
+      }
+
+      .hero-date {
+        font-size: 10px;
+        letter-spacing: 0.26em;
+      }
+
+      .story-panel,
+      .location-panel {
+        padding:
+          43px
+          22px;
+      }
+
+      .story-title {
+        font-size:
+          clamp(
+            3.2rem,
+            15vw,
+            4.7rem
+          );
+      }
+
+      .story-copy {
+        font-size: 1.25rem;
+        line-height: 1.55;
+      }
+
+      .wedding-number {
+        font-size:
+          clamp(
+            8rem,
+            37vw,
+            12rem
+          );
+      }
+
+      .wedding-month {
+        margin-top: 42px;
+      }
+
+      .wedding-time {
+        font-size: 1.9rem;
+        letter-spacing: 0.13em;
+        margin-top: 30px;
+      }
+
+      .countdown {
+        gap: 0;
+      }
+
+      .count-item {
+        padding:
+          14px
+          4px;
+      }
+
+      .count-number {
+        font-size: 1.8rem;
+      }
+
+      .count-label {
+        font-size: 7px;
+        letter-spacing: 0.15em;
+      }
+
+      .location-title {
+        font-size: 2.25rem;
+      }
+
+      .location-address {
+        font-size: 1.2rem;
+      }
+
+      .location-reference {
+        font-size: 8.5px;
+      }
+
+      .map-button {
+        font-size: 9px;
+      }
+
+      .closing-quote {
+        font-size:
+          clamp(
+            2.35rem,
+            10vw,
+            3.5rem
+          );
+      }
+
+      .side-mark {
+        width: 52px;
+        height: 52px;
+      }
+
+      .side-mark::before {
+        height: 40px;
+      }
+
+      .side-mark::after {
+        width: 40px;
+      }
+
+      .mark-top {
+        top: 20px;
+        right: 20px;
+      }
+
+      .mark-bottom {
+        bottom: 20px;
+        left: 20px;
+      }
+    }
+
+    /* =========================================================
+       18 · PANTALLAS MUY PEQUEÑAS
+    ========================================================== */
+
+    @media (max-width: 380px) {
+      .hero-name {
+        font-size: 4rem;
+      }
+
+      .hero-date {
+        font-size: 9px;
+        letter-spacing: 0.21em;
+      }
+
+      .count-number {
+        font-size: 1.55rem;
+      }
+
+      .count-label {
+        font-size: 6px;
+        letter-spacing: 0.13em;
+      }
+
+      .location-reference {
+        font-size: 8px;
+      }
+    }
+
+    /* =========================================================
+       19 · ACCESIBILIDAD / MENOS MOVIMIENTO
+    ========================================================== */
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================================================
+       01 · BARRA DE PROGRESO
+  ========================================================== -->
+
+  <div class="progress">
+    <div
+      class="progress-bar"
+      id="progressBar"
+    ></div>
+  </div>
+
+
+  <!-- =========================================================
+       02 · ESCENA DE FONDO
+  ========================================================== -->
+
+  <div class="scene">
+
+    <div
+      class="scene-photo"
+      id="scenePhoto"
+    ></div>
+
+    <div
+      class="olive-overlay"
+      id="oliveOverlay"
+    ></div>
+
+    <div
+      class="warm-overlay"
+      id="warmOverlay"
+    ></div>
+
+    <div class="vignette"></div>
+
+  </div>
+
+  <div class="grain"></div>
+
+
+  <!-- =========================================================
+       03 · PORTADA
+  ========================================================== -->
+
+  <section class="hero">
+
+    <div class="side-mark mark-top"></div>
+    <div class="side-mark mark-bottom"></div>
+
+    <div class="container hero-content">
+
+      <div class="eyebrow hero-eyebrow">
+        Con Dios como centro de nuestra historia
+      </div>
+
+      <div class="hero-names">
+
+        <div class="hero-name">
+          Samuel
+        </div>
+
+        <div class="hero-amp">
+          &
+        </div>
+
+        <div class="hero-name">
+          Ixkaj
+        </div>
+
+      </div>
+
+      <div class="hero-date">
+        19 · DICIEMBRE · 2026
+      </div>
+
+      <div class="hairline"></div>
+
+      <div class="diamond"></div>
+
+    </div>
+
+    <div class="hero-bottom">
+      <span>Descubre</span>
+
+      <div class="scroll-line"></div>
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       04 · NUESTRA HISTORIA
+  ========================================================== -->
+
+  <section class="story">
+
+    <div class="container">
+
+      <div class="story-panel reveal">
+
+        <div class="eyebrow">
+          Nuestra historia
+        </div>
+
+        <h2 class="story-title">
+          Dos caminos.<br />
+          Una historia<br />
+          escrita por Dios.
+        </h2>
+
+        <div class="hairline"></div>
+
+        <div class="story-copy">
+
+          <p>
+            Cada uno seguía su propio camino,
+            sin imaginar que Dios ya estaba
+            preparando nuestro encuentro.
+          </p>
+
+          <p>
+            Hoy entendemos que lo que nosotros
+            no planeamos,
+            <span class="story-highlight">
+              Él ya lo había dispuesto.
+            </span>
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       05 · LA BODA
+  ========================================================== -->
+
+  <section class="wedding">
+
+    <div class="container reveal">
+
+      <div class="eyebrow">
+        La boda
+      </div>
+
+      <div class="wedding-number">
+        19
+      </div>
+
+      <div class="wedding-month">
+        Diciembre
+      </div>
+
+      <div class="wedding-year">
+        2026
+      </div>
+
+      <div class="hairline"></div>
+
+      <div class="wedding-time">
+        3:00 P. M.
+      </div>
+
+
+      <!-- =====================================================
+           CONTADOR
+      ====================================================== -->
+
+      <div
+        class="countdown"
+        aria-label="Cuenta regresiva para nuestra boda"
+      >
+
+        <div class="count-item">
+
+          <span
+            class="count-number"
+            id="days"
+          >
+            00
+          </span>
+
+          <span class="count-label">
+            Días
+          </span>
+
+        </div>
+
+
+        <div class="count-item">
+
+          <span
+            class="count-number"
+            id="hours"
+          >
+            00
+          </span>
+
+          <span class="count-label">
+            Horas
+          </span>
+
+        </div>
+
+
+        <div class="count-item">
+
+          <span
+            class="count-number"
+            id="minutes"
+          >
+            00
+          </span>
+
+          <span class="count-label">
+            Minutos
+          </span>
+
+        </div>
+
+
+        <div class="count-item">
+
+          <span
+            class="count-number"
+            id="seconds"
+          >
+            00
+          </span>
+
+          <span class="count-label">
+            Segundos
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       06 · UBICACIÓN
+  ========================================================== -->
+
+  <section class="location">
+
+    <div class="container">
+
+      <div class="location-panel reveal">
+
+        <div class="eyebrow">
+          Donde comienza este nuevo capítulo
+        </div>
+
+        <h2 class="location-title">
+          Complejo del Colegio<br />
+          Simeón Cañas
+        </h2>
+
+        <div class="hairline"></div>
+
+        <div class="location-address">
+          1ª Calle, 6ª Avenida<br />
+          Colonia La Primavera<br />
+          Chimaltenango
+        </div>
+
+        <div class="location-reference">
+          Referencia: Sector de las menonitas
+        </div>
+
+        <a
+          class="map-button"
+          href="https://maps.app.goo.gl/ENU1dBfwFDbRUKw37"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Abrir ubicación de la boda en Google Maps"
+        >
+          Ver ubicación
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       07 · CIERRE
+  ========================================================== -->
+
+  <section class="closing">
+
+    <div class="container reveal">
+
+      <div class="eyebrow closing-label">
+        Con amor y gratitud
+      </div>
+
+      <div class="closing-quote">
+        Lo que nosotros no planeamos,<br />
+        Dios ya lo había dispuesto.
+      </div>
+
+      <div class="hairline"></div>
+
+      <div class="closing-names">
+        Samuel & Ixkaj
+      </div>
+
+      <div class="closing-date">
+        19 · XII · 2026
+      </div>
+
+      <div class="closing-signature">
+        Con Dios como centro de nuestra historia.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       08 · FOOTER
+  ========================================================== -->
+
+  <footer>
+
+    <p>
+      Samuel & Ixkaj · 19 · XII · 2026
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================================
+       09 · JAVASCRIPT
+  ========================================================== -->
+
+  <script>
+
+    /* =========================================================
+       CONTADOR
+    ========================================================== */
+
+    const weddingDate =
+      new Date(
+        "2026-12-19T15:00:00-06:00"
+      ).getTime();
+
+
+    function updateCountdown() {
+
+      const now = Date.now();
+
+      const distance =
+        weddingDate - now;
+
+
+      if (distance <= 0) {
+
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
+
+        return;
+      }
+
+
+      const days =
+        Math.floor(
+          distance /
+          (1000 * 60 * 60 * 24)
+        );
+
+
+      const hours =
+        Math.floor(
+          (
+            distance %
+            (1000 * 60 * 60 * 24)
+          ) /
+          (1000 * 60 * 60)
+        );
+
+
+      const minutes =
+        Math.floor(
+          (
+            distance %
+            (1000 * 60 * 60)
+          ) /
+          (1000 * 60)
+        );
+
+
+      const seconds =
+        Math.floor(
+          (
+            distance %
+            (1000 * 60)
+          ) /
+          1000
+        );
+
+
+      document.getElementById("days").textContent =
+        String(days).padStart(2, "0");
+
+
+      document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+
+      document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+
+      document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+    }
+
+
+    updateCountdown();
+
+    setInterval(
+      updateCountdown,
+      1000
+    );
+
+
+    /* =========================================================
+       BARRA DE PROGRESO + ATMÓSFERA
+    ========================================================== */
+
+    const progressBar =
+      document.getElementById("progressBar");
+
+    const scenePhoto =
+      document.getElementById("scenePhoto");
+
+    const warmOverlay =
+      document.getElementById("warmOverlay");
+
+    const oliveOverlay =
+      document.getElementById("oliveOverlay");
+
+
+    function updateScene() {
+
+      const scrollTop =
+        window.scrollY;
+
+
+      const documentHeight =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+
+      const progress =
+        documentHeight > 0
+          ? Math.min(
+              1,
+              Math.max(
+                0,
+                scrollTop /
+                documentHeight
+              )
+            )
+          : 0;
+
+
+      /* Barra superior */
+
+      progressBar.style.width =
+        `${progress * 100}%`;
+
+
+      /* Movimiento muy sutil de fotografía */
+
+      const photoScale =
+        1.045 +
+        progress * 0.018;
+
+
+      const photoY =
+        progress * -0.8;
+
+
+      scenePhoto.style.transform =
+        `
+          scale(${photoScale})
+          translateY(${photoY}%)
+        `;
+
+
+      /*
+        El bosque permanece protagonista.
+        Solo se profundiza ligeramente
+        conforme avanza la invitación.
+      */
+
+      const brightness =
+        1.04 -
+        progress * 0.11;
+
+
+      const saturation =
+        0.88 +
+        progress * 0.05;
+
+
+      scenePhoto.style.filter =
+        `
+          brightness(${brightness})
+          saturate(${saturation})
+          contrast(1.03)
+        `;
+
+
+      /*
+        El cálido de portada disminuye
+        lentamente.
+      */
+
+      warmOverlay.style.opacity =
+        0.90 -
+        progress * 0.55;
+
+
+      /*
+        El olivo aumenta apenas.
+      */
+
+      oliveOverlay.style.opacity =
+        0.68 +
+        progress * 0.12;
+    }
+
+
+    let ticking = false;
+
+
+    window.addEventListener(
+      "scroll",
+      () => {
+
+        if (!ticking) {
+
+          window.requestAnimationFrame(
+            () => {
+
+              updateScene();
+
+              ticking = false;
+
+            }
+          );
+
+          ticking = true;
+        }
+
+      },
+      {
+        passive: true
+      }
+    );
+
+
+    updateScene();
+
+
+    /* =========================================================
+       REVEAL DE SECCIONES
+    ========================================================== */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+
+    const revealObserver =
+      new IntersectionObserver(
+        (entries) => {
+
+          entries.forEach(
+            (entry) => {
+
+              if (entry.isIntersecting) {
+
+                entry.target.classList.add(
+                  "visible"
+                );
+
+                revealObserver.unobserve(
+                  entry.target
+                );
+              }
+
+            }
+          );
+
+        },
+        {
+          threshold: 0.16
+        }
+      );
+
+
+    revealElements.forEach(
+      (element) => {
+
+        revealObserver.observe(
+          element
+        );
+
+      }
+    );
+
+  </script>
+
+</body>
+</html>
