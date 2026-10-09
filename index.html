@@ -93,6 +93,12 @@
       --white: #ffffff;
 
       --shadow: rgba(10, 16, 11, 0.35);
+      --text-outline:
+        1px 0 1px rgba(8, 13, 9, 0.82),
+        -1px 0 1px rgba(8, 13, 9, 0.82),
+        0 1px 1px rgba(8, 13, 9, 0.82),
+        0 -1px 1px rgba(8, 13, 9, 0.82),
+        0 3px 12px rgba(8, 13, 9, 0.62);
 
       --serif: "Cormorant Garamond", serif;
       --display: "Italiana", serif;
@@ -255,6 +261,8 @@
 
       text-align: center;
       z-index: 2;
+
+      text-shadow: var(--text-outline);
     }
 
     /* =========================================================
@@ -396,8 +404,7 @@
 
       color: var(--ivory);
 
-      text-shadow:
-        0 5px 35px rgba(0, 0, 0, 0.25);
+      text-shadow: var(--text-outline);
     }
 
     .hero-amp {
@@ -459,6 +466,8 @@
       letter-spacing: 0.32em;
 
       text-transform: uppercase;
+
+      text-shadow: var(--text-outline);
     }
 
     .scroll-line {
@@ -549,8 +558,7 @@
 
       color: var(--ivory);
 
-      text-shadow:
-        0 4px 25px rgba(0, 0, 0, 0.18);
+      text-shadow: var(--text-outline);
     }
 
     .story-copy {
@@ -613,8 +621,7 @@
 
       letter-spacing: -0.055em;
 
-      text-shadow:
-        0 8px 50px rgba(0, 0, 0, 0.23);
+      text-shadow: var(--text-outline);
     }
 
     .wedding-month {
@@ -905,8 +912,7 @@
 
       color: var(--ivory);
 
-      text-shadow:
-        0 5px 30px rgba(0, 0, 0, 0.22);
+      text-shadow: var(--text-outline);
     }
 
     .closing-names {
