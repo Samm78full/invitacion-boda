@@ -15,13 +15,6 @@
     content="Samuel & Ixkaj · 19 de diciembre de 2026"
   />
 
-  <!-- =========================================================
-       TIPOGRAFÍAS
-       Cormorant Garamond = editorial / lujo
-       Italiana          = nombres
-       Montserrat        = información
-  ========================================================== -->
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
 
   <link
@@ -142,13 +135,6 @@
       background: var(--olive-900);
     }
 
-    /*
-      IMPORTANTE:
-      Se mantiene background-image porque esta versión
-      es la que ya está funcionando correctamente con
-      lugar-boda.jpg.
-    */
-
     .scene-photo {
       position: absolute;
       inset: -3%;
@@ -168,8 +154,6 @@
       will-change: transform, filter;
     }
 
-    /* Velo olivo MUY sutil */
-
     .olive-overlay {
       position: absolute;
       inset: 0;
@@ -185,8 +169,6 @@
       mix-blend-mode: multiply;
     }
 
-    /* Luz cálida de atardecer */
-
     .warm-overlay {
       position: absolute;
       inset: 0;
@@ -201,8 +183,6 @@
 
       opacity: 0.9;
     }
-
-    /* Vignette premium */
 
     .vignette {
       position: absolute;
@@ -242,6 +222,7 @@
     section {
       position: relative;
 
+      min-height: 100vh;
       min-height: 100svh;
 
       display: flex;
@@ -322,6 +303,7 @@
     ========================================================== */
 
     .hero {
+      min-height: 100vh;
       min-height: 100svh;
 
       padding:
@@ -354,24 +336,15 @@
         );
     }
 
+    /* CORRECCIÓN: la portada queda visible sin depender de animaciones. */
+
     .hero-content {
-      opacity: 0;
-
-      transform: translateY(20px);
-
-      animation:
-        heroReveal
-        1.5s
-        cubic-bezier(.2, .8, .2, 1)
-        0.15s
-        forwards;
-    }
-
-    @keyframes heroReveal {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      -webkit-transform: none;
+      animation: none;
+      -webkit-animation: none;
     }
 
     .hero-eyebrow {
@@ -505,6 +478,7 @@
     ========================================================== */
 
     .story {
+      min-height: 92vh;
       min-height: 92svh;
     }
 
@@ -599,6 +573,7 @@
     ========================================================== */
 
     .wedding {
+      min-height: 100vh;
       min-height: 100svh;
       text-align: center;
     }
@@ -751,6 +726,7 @@
     ========================================================== */
 
     .location {
+      min-height: 92vh;
       min-height: 92svh;
     }
 
@@ -883,6 +859,7 @@
     ========================================================== */
 
     .closing {
+      min-height: 92vh;
       min-height: 92svh;
     }
 
@@ -1277,15 +1254,19 @@
         opacity: 1;
         transform: none;
       }
+
+      .hero-content {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- =========================================================
-       01 · BARRA DE PROGRESO
-  ========================================================== -->
+  <!-- BARRA DE PROGRESO -->
 
   <div class="progress">
     <div
@@ -1294,10 +1275,7 @@
     ></div>
   </div>
 
-
-  <!-- =========================================================
-       02 · ESCENA DE FONDO
-  ========================================================== -->
+  <!-- FONDO -->
 
   <div class="scene">
 
@@ -1322,10 +1300,7 @@
 
   <div class="grain"></div>
 
-
-  <!-- =========================================================
-       03 · PORTADA
-  ========================================================== -->
+  <!-- PORTADA -->
 
   <section class="hero">
 
@@ -1366,17 +1341,12 @@
 
     <div class="hero-bottom">
       <span>Descubre</span>
-
       <div class="scroll-line"></div>
     </div>
 
   </section>
 
-
-  <!-- =========================================================
-      ,,,,,, =========================================================
-       05 · LA BODA
-  ========================================================== -->
+  <!-- LA BODA Y CONTADOR -->
 
   <section class="wedding">
 
@@ -1404,77 +1374,29 @@
         3:00 P. M.
       </div>
 
-
-      <!-- =====================================================
-           CONTADOR
-      ====================================================== -->
-
       <div
         class="countdown"
         aria-label="Cuenta regresiva para nuestra boda"
       >
 
         <div class="count-item">
-
-          <span
-            class="count-number"
-            id="days"
-          >
-            00
-          </span>
-
-          <span class="count-label">
-            Días
-          </span>
-
+          <span class="count-number" id="days">00</span>
+          <span class="count-label">Días</span>
         </div>
 
-
         <div class="count-item">
-
-          <span
-            class="count-number"
-            id="hours"
-          >
-            00
-          </span>
-
-          <span class="count-label">
-            Horas
-          </span>
-
+          <span class="count-number" id="hours">00</span>
+          <span class="count-label">Horas</span>
         </div>
 
-
         <div class="count-item">
-
-          <span
-            class="count-number"
-            id="minutes"
-          >
-            00
-          </span>
-
-          <span class="count-label">
-            Minutos
-          </span>
-
+          <span class="count-number" id="minutes">00</span>
+          <span class="count-label">Minutos</span>
         </div>
 
-
         <div class="count-item">
-
-          <span
-            class="count-number"
-            id="seconds"
-          >
-            00
-          </span>
-
-          <span class="count-label">
-            Segundos
-          </span>
-
+          <span class="count-number" id="seconds">00</span>
+          <span class="count-label">Segundos</span>
         </div>
 
       </div>
@@ -1483,10 +1405,7 @@
 
   </section>
 
-
-  <!-- =========================================================
-       06 · UBICACIÓN
-  ========================================================== -->
+  <!-- UBICACIÓN -->
 
   <section class="location">
 
@@ -1531,10 +1450,7 @@
 
   </section>
 
-
-  <!-- =========================================================
-       07 · CIERRE
-  ========================================================== -->
+  <!-- CIERRE -->
 
   <section class="closing">
 
@@ -1567,26 +1483,17 @@
 
   </section>
 
-
-  <!-- =========================================================
-       08 · FOOTER
-  ========================================================== -->
+  <!-- PIE DE PÁGINA -->
 
   <footer>
-
     <p>
       Samuel & Ixkaj · 19 · XII · 2026
     </p>
-
   </footer>
 
-
-  <!-- =========================================================
-       09 · JAVASCRIPT
-  ========================================================== -->
+  <!-- JAVASCRIPT -->
 
   <script>
-
     /* =========================================================
        CONTADOR
     ========================================================== */
@@ -1596,90 +1503,58 @@
         "2026-12-19T15:00:00-06:00"
       ).getTime();
 
-
     function updateCountdown() {
-
       const now = Date.now();
-
-      const distance =
-        weddingDate - now;
-
+      const distance = weddingDate - now;
 
       if (distance <= 0) {
-
         document.getElementById("days").textContent = "00";
         document.getElementById("hours").textContent = "00";
         document.getElementById("minutes").textContent = "00";
         document.getElementById("seconds").textContent = "00";
-
         return;
       }
 
+      const days = Math.floor(
+        distance / (1000 * 60 * 60 * 24)
+      );
 
-      const days =
-        Math.floor(
-          distance /
-          (1000 * 60 * 60 * 24)
-        );
+      const hours = Math.floor(
+        (
+          distance % (1000 * 60 * 60 * 24)
+        ) / (1000 * 60 * 60)
+      );
 
+      const minutes = Math.floor(
+        (
+          distance % (1000 * 60 * 60)
+        ) / (1000 * 60)
+      );
 
-      const hours =
-        Math.floor(
-          (
-            distance %
-            (1000 * 60 * 60 * 24)
-          ) /
-          (1000 * 60 * 60)
-        );
-
-
-      const minutes =
-        Math.floor(
-          (
-            distance %
-            (1000 * 60 * 60)
-          ) /
-          (1000 * 60)
-        );
-
-
-      const seconds =
-        Math.floor(
-          (
-            distance %
-            (1000 * 60)
-          ) /
-          1000
-        );
-
+      const seconds = Math.floor(
+        (
+          distance % (1000 * 60)
+        ) / 1000
+      );
 
       document.getElementById("days").textContent =
         String(days).padStart(2, "0");
 
-
       document.getElementById("hours").textContent =
         String(hours).padStart(2, "0");
 
-
       document.getElementById("minutes").textContent =
         String(minutes).padStart(2, "0");
-
 
       document.getElementById("seconds").textContent =
         String(seconds).padStart(2, "0");
     }
 
-
     updateCountdown();
-
-    setInterval(
-      updateCountdown,
-      1000
-    );
-
+    setInterval(updateCountdown, 1000);
 
     /* =========================================================
-       BARRA DE PROGRESO + ATMÓSFERA
+       BARRA DE PROGRESO Y FONDO
     ========================================================== */
 
     const progressBar =
@@ -1694,17 +1569,12 @@
     const oliveOverlay =
       document.getElementById("oliveOverlay");
 
-
     function updateScene() {
-
-      const scrollTop =
-        window.scrollY;
-
+      const scrollTop = window.scrollY;
 
       const documentHeight =
         document.documentElement.scrollHeight -
         window.innerHeight;
-
 
       const progress =
         documentHeight > 0
@@ -1712,159 +1582,96 @@
               1,
               Math.max(
                 0,
-                scrollTop /
-                documentHeight
+                scrollTop / documentHeight
               )
             )
           : 0;
 
-
-      /* Barra superior */
-
       progressBar.style.width =
         `${progress * 100}%`;
 
-
-      /* Movimiento muy sutil de fotografía */
-
       const photoScale =
-        1.045 +
-        progress * 0.018;
-
+        1.045 + progress * 0.018;
 
       const photoY =
         progress * -0.8;
 
-
       scenePhoto.style.transform =
-        `
-          scale(${photoScale})
-          translateY(${photoY}%)
-        `;
-
-
-      /*
-        El bosque permanece protagonista.
-        Solo se profundiza ligeramente
-        conforme avanza la invitación.
-      */
+        `scale(${photoScale}) translateY(${photoY}%)`;
 
       const brightness =
-        1.04 -
-        progress * 0.11;
-
+        1.04 - progress * 0.11;
 
       const saturation =
-        0.88 +
-        progress * 0.05;
-
+        0.88 + progress * 0.05;
 
       scenePhoto.style.filter =
-        `
-          brightness(${brightness})
-          saturate(${saturation})
-          contrast(1.03)
-        `;
-
-
-      /*
-        El cálido de portada disminuye
-        lentamente.
-      */
+        `brightness(${brightness}) saturate(${saturation}) contrast(1.03)`;
 
       warmOverlay.style.opacity =
-        0.90 -
-        progress * 0.55;
-
-
-      /*
-        El olivo aumenta apenas.
-      */
+        0.90 - progress * 0.55;
 
       oliveOverlay.style.opacity =
-        0.68 +
-        progress * 0.12;
+        0.68 + progress * 0.12;
     }
 
-
     let ticking = false;
-
 
     window.addEventListener(
       "scroll",
       () => {
-
         if (!ticking) {
-
-          window.requestAnimationFrame(
-            () => {
-
-              updateScene();
-
-              ticking = false;
-
-            }
-          );
+          window.requestAnimationFrame(() => {
+            updateScene();
+            ticking = false;
+          });
 
           ticking = true;
         }
-
       },
       {
         passive: true
       }
     );
 
-
     updateScene();
-
 
     /* =========================================================
        REVEAL DE SECCIONES
+       Respaldo para navegadores sin IntersectionObserver.
     ========================================================== */
 
     const revealElements =
       document.querySelectorAll(".reveal");
 
-
-    const revealObserver =
-      new IntersectionObserver(
-        (entries) => {
-
-          entries.forEach(
-            (entry) => {
-
+    if ("IntersectionObserver" in window) {
+      const revealObserver =
+        new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
               if (entry.isIntersecting) {
-
-                entry.target.classList.add(
-                  "visible"
-                );
+                entry.target.classList.add("visible");
 
                 revealObserver.unobserve(
                   entry.target
                 );
               }
-
-            }
-          );
-
-        },
-        {
-          threshold: 0.16
-        }
-      );
-
-
-    revealElements.forEach(
-      (element) => {
-
-        revealObserver.observe(
-          element
+            });
+          },
+          {
+            threshold: 0.16
+          }
         );
 
-      }
-    );
+      revealElements.forEach((element) => {
+        revealObserver.observe(element);
+      });
 
+    } else {
+      revealElements.forEach((element) => {
+        element.classList.add("visible");
+      });
+    }
   </script>
 
 </body>
