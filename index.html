@@ -2,434 +2,320 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Samuel & Ixkaj · Nuestra boda · 19 de diciembre de 2026</title>
-  <meta name="description" content="Con la bendición de Dios, Samuel e Ixkaj celebran su unión el 19 de diciembre de 2026. Será una alegría compartir este día tan especial contigo." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Samuel e Ixkaj · 19 XII 2026</title>
+<meta name="description" content="Samuel e Ixkaj · 19 de diciembre de 2026">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Italiana&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Italiana&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{background:#273126;color:#f7f2e8;font-family:"Montserrat",sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-    img{max-width:100%;display:block}
-    a{color:inherit}
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#273126;color:#f7f2e8;font-family:"Montserrat",sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;display:block}
+a{color:inherit}
 
-    :root{
-      --olive-950:#151d16;
-      --olive-900:#1c281d;
-      --olive-800:#273126;
-      --olive-700:#3d4934;
-      --olive-600:#556047;
-      --olive-500:#70795b;
-      --ivory:#f8f3e8;
-      --ivory-soft:rgba(248,243,232,0.82);
-      --ivory-muted:rgba(248,243,232,0.62);
-      --champagne:#cdb477;
-      --champagne-light:#e1ce9b;
-      --champagne-soft:rgba(205,180,119,0.55);
-      --white:#ffffff;
-      --shadow:rgba(10,16,11,0.35);
-      --text-outline:1px 0 1px rgba(8,13,9,0.82),-1px 0 1px rgba(8,13,9,0.82),0 1px 1px rgba(8,13,9,0.82),0 -1px 1px rgba(8,13,9,0.82),0 3px 12px rgba(8,13,9,0.62);
-      --serif:"Cormorant Garamond",serif;
-      --display:"Italiana",serif;
-      --sans:"Montserrat",sans-serif;
-    }
+:root{
+--olive-950:#151d16;--olive-900:#1c281d;--olive-800:#273126;--olive-700:#3d4934;--olive-600:#556047;--olive-500:#70795b;
+--ivory:#f8f3e8;--ivory-soft:rgba(248,243,232,.82);--ivory-muted:rgba(248,243,232,.62);
+--champagne:#cdb477;--champagne-light:#e1ce9b;--champagne-soft:rgba(205,180,119,.55);
+--white:#fff;--shadow:rgba(10,16,11,.35);
+--text-outline:1px 0 1px rgba(8,13,9,.82),-1px 0 1px rgba(8,13,9,.82),0 1px 1px rgba(8,13,9,.82),0 -1px 1px rgba(8,13,9,.82),0 3px 12px rgba(8,13,9,.62);
+--serif:"Cormorant Garamond",serif;--display:"Italiana",serif;--sans:"Montserrat",sans-serif
+}
 
-    .progress{position:fixed;top:0;left:0;width:100%;height:2px;z-index:1000;background:rgba(255,255,255,0.06)}
-    .progress-bar{width:0%;height:100%;background:linear-gradient(90deg,var(--champagne),var(--champagne-light));transform-origin:left}
+.progress{position:fixed;top:0;left:0;width:100%;height:2px;z-index:1000;background:rgba(255,255,255,.06)}
+.progress-bar{width:0%;height:100%;background:linear-gradient(90deg,var(--champagne),var(--champagne-light));transform-origin:left}
 
-    .scene{position:fixed;inset:0;z-index:-10;overflow:hidden;background:var(--olive-900)}
-    .scene-photo{position:absolute;inset:-3%;background-image:url("lugar-boda.jpg");background-size:cover;background-position:center center;background-repeat:no-repeat;transform:scale(1.045);filter:brightness(1.04) saturate(0.88) contrast(1.03);will-change:transform,filter}
-    .olive-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(68,81,52,0.22),rgba(28,39,29,0.08));opacity:0.7;mix-blend-mode:multiply}
-    .warm-overlay{position:absolute;inset:0;background:radial-gradient(circle at 50% 12%,rgba(255,226,166,0.20),rgba(255,226,166,0.05) 28%,transparent 55%);opacity:0.9}
-    .vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 34%,rgba(15,22,16,0.08) 63%,rgba(11,17,12,0.46) 100%);pointer-events:none}
-    .grain{position:fixed;inset:0;z-index:999;pointer-events:none;opacity:0.035;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E")}
+.scene{position:fixed;inset:0;z-index:-10;overflow:hidden;background:var(--olive-900)}
+.scene-photo{
+position:absolute;inset:-3%;
+background-image:url("./lugar-boda.jpg");
+background-size:cover;background-position:center center;background-repeat:no-repeat;
+transform:scale(1.045);
+filter:brightness(1.04) saturate(.88) contrast(1.03);
+will-change:transform,filter
+}
+.olive-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(68,81,52,.22),rgba(28,39,29,.08));opacity:.7;mix-blend-mode:multiply}
+.warm-overlay{position:absolute;inset:0;background:radial-gradient(circle at 50% 12%,rgba(255,226,166,.2),rgba(255,226,166,.05) 28%,transparent 55%);opacity:.9}
+.vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 34%,rgba(15,22,16,.08) 63%,rgba(11,17,12,.46) 100%);pointer-events:none}
+.grain{position:fixed;inset:0;z-index:999;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E")}
 
-    section{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;padding:clamp(90px,12vw,150px) 24px}
-    .container{position:relative;width:min(1100px,100%);margin:0 auto;text-align:center;z-index:2;text-shadow:var(--text-outline)}
-    .eyebrow{font-family:var(--sans);font-size:10px;line-height:1.5;letter-spacing:0.36em;text-transform:uppercase;color:var(--champagne-light);font-weight:500}
-    .hairline{width:74px;height:1px;margin:25px auto;background:linear-gradient(90deg,transparent,var(--champagne),transparent);opacity:0.8}
-    .diamond{width:5px;height:5px;margin:0 auto;background:var(--champagne);transform:rotate(45deg);box-shadow:0 0 12px rgba(205,180,119,0.35)}
+section{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;padding:clamp(90px,12vw,150px) 24px}
+.container{position:relative;width:min(1100px,100%);margin:0 auto;text-align:center;z-index:2;text-shadow:var(--text-outline)}
+.eyebrow{font-family:var(--sans);font-size:10px;line-height:1.5;letter-spacing:.36em;text-transform:uppercase;color:var(--champagne-light);font-weight:500}
+.hairline{width:74px;height:1px;margin:25px auto;background:linear-gradient(90deg,transparent,var(--champagne),transparent);opacity:.8}
+.diamond{width:5px;height:5px;margin:0 auto;background:var(--champagne);transform:rotate(45deg);box-shadow:0 0 12px rgba(205,180,119,.35)}
 
-    .hero{min-height:100vh;min-height:100svh;padding:50px 24px 70px;overflow:hidden}
-    .hero::after{content:"";position:absolute;left:50%;bottom:0;width:min(800px,100%);height:1px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,rgba(205,180,119,0.35),transparent)}
-    .hero-content{opacity:1;visibility:visible;transform:none;-webkit-transform:none;animation:none;-webkit-animation:none}
-    .hero-eyebrow{margin-bottom:24px}
-    .hero-names{margin-top:30px;display:flex;flex-direction:column;align-items:center;line-height:0.74}
-    .hero-name{font-family:var(--display);font-size:clamp(5rem,15vw,10.5rem);font-weight:400;letter-spacing:-0.045em;color:var(--ivory);text-shadow:var(--text-outline)}
-    .hero-amp{font-family:var(--serif);font-size:clamp(2.5rem,6vw,4.5rem);font-weight:300;font-style:italic;color:var(--champagne-light);line-height:1.2;margin:15px 0}
-    .hero-date{margin-top:46px;font-family:var(--sans);font-size:11px;letter-spacing:0.40em;text-transform:uppercase;color:var(--ivory);font-weight:500}
-    .hero-bottom{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--ivory-muted);font-size:8px;letter-spacing:0.32em;text-transform:uppercase;text-shadow:var(--text-outline)}
-    .scroll-line{width:1px;height:42px;background:linear-gradient(var(--champagne),transparent);animation:scrollPulse 2.2s ease-in-out infinite}
-    @keyframes scrollPulse{0%,100%{opacity:0.25;transform:scaleY(0.65)}50%{opacity:1;transform:scaleY(1)}}
+.hero{min-height:100vh;min-height:100svh;padding:50px 24px 70px;overflow:hidden}
+.hero::after{content:"";position:absolute;left:50%;bottom:0;width:min(800px,100%);height:1px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,rgba(205,180,119,.35),transparent)}
+.hero-content{opacity:1;visibility:visible;transform:none;-webkit-transform:none;animation:none;-webkit-animation:none}
+.hero-eyebrow{margin-bottom:24px}
+.hero-names{margin-top:30px;display:flex;flex-direction:column;align-items:center;line-height:.74}
+.hero-name{font-family:var(--display);font-size:clamp(5rem,15vw,10.5rem);font-weight:400;letter-spacing:-.045em;color:var(--ivory);text-shadow:var(--text-outline)}
+.hero-amp{font-family:var(--serif);font-size:clamp(2.5rem,6vw,4.5rem);font-weight:300;font-style:italic;color:var(--champagne-light);line-height:1.2;margin:15px 0}
+.hero-date{margin-top:46px;font-family:var(--sans);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--ivory);font-weight:500}
+.hero-bottom{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--ivory-muted);font-size:8px;letter-spacing:.32em;text-transform:uppercase;text-shadow:var(--text-outline)}
+.scroll-line{width:1px;height:42px;background:linear-gradient(var(--champagne),transparent);animation:scrollPulse 2.2s ease-in-out infinite}
+@keyframes scrollPulse{0%,100%{opacity:.25;transform:scaleY(.65)}50%{opacity:1;transform:scaleY(1)}}
 
-    .story{min-height:92vh;min-height:92svh}
-    .story-panel{width:min(790px,100%);margin:0 auto;padding:clamp(45px,8vw,80px) clamp(25px,7vw,75px);background:linear-gradient(135deg,rgba(27,39,28,0.22),rgba(27,39,28,0.07));border-top:1px solid rgba(248,243,232,0.24);border-bottom:1px solid rgba(205,180,119,0.30);box-shadow:0 30px 100px rgba(8,13,9,0.18);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
-    .story-title{margin-top:22px;font-family:var(--serif);font-size:clamp(3.4rem,7vw,5.9rem);font-weight:300;line-height:0.92;color:var(--ivory);text-shadow:var(--text-outline)}
-    .story-copy{max-width:640px;margin:35px auto 0;font-family:var(--serif);font-size:clamp(1.3rem,2.6vw,1.65rem);line-height:1.55;font-weight:300;color:var(--ivory-soft)}
-    .story-copy p+p{margin-top:22px}
-    .story-highlight{color:var(--ivory);font-weight:500}
+.story{min-height:92vh;min-height:92svh}
+.story-panel{width:min(790px,100%);margin:0 auto;padding:clamp(45px,8vw,80px) clamp(25px,7vw,75px);background:linear-gradient(135deg,rgba(27,39,28,.22),rgba(27,39,28,.07));border-top:1px solid rgba(248,243,232,.24);border-bottom:1px solid rgba(205,180,119,.3);box-shadow:0 30px 100px rgba(8,13,9,.18);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.story-title{margin-top:22px;font-family:var(--serif);font-size:clamp(3.4rem,7vw,5.9rem);font-weight:300;line-height:.92;color:var(--ivory);text-shadow:var(--text-outline)}
+.story-copy{max-width:640px;margin:35px auto 0;font-family:var(--serif);font-size:clamp(1.3rem,2.6vw,1.65rem);line-height:1.55;font-weight:300;color:var(--ivory-soft)}
+.story-copy p+p{margin-top:22px}
+.story-highlight{color:var(--ivory);font-weight:500}
 
-    .wedding{min-height:100vh;min-height:100svh;text-align:center}
-    .wedding-number{margin-top:28px;font-family:var(--display);font-size:clamp(8rem,23vw,16rem);line-height:0.70;color:rgba(248,243,232,0.96);letter-spacing:-0.055em;text-shadow:var(--text-outline)}
-    .wedding-month{margin-top:45px;font-family:var(--serif);font-size:clamp(2.2rem,5vw,4rem);font-weight:400;font-style:italic;color:var(--champagne-light)}
-    .wedding-year{margin-top:5px;font-family:var(--sans);font-size:11px;letter-spacing:0.45em;text-transform:uppercase;color:var(--ivory-muted)}
-    .wedding-time{margin-top:35px;font-size:clamp(1.45rem,3.2vw,2.15rem);letter-spacing:0.18em;text-transform:uppercase;color:var(--ivory);font-weight:600;line-height:1}
+.wedding{min-height:100vh;min-height:100svh;text-align:center}
+.wedding-number{margin-top:28px;font-family:var(--display);font-size:clamp(8rem,23vw,16rem);line-height:.7;color:rgba(248,243,232,.96);letter-spacing:-.055em;text-shadow:var(--text-outline)}
+.wedding-month{margin-top:45px;font-family:var(--serif);font-size:clamp(2.2rem,5vw,4rem);font-weight:400;font-style:italic;color:var(--champagne-light)}
+.wedding-year{margin-top:5px;font-family:var(--sans);font-size:11px;letter-spacing:.45em;text-transform:uppercase;color:var(--ivory-muted)}
+.wedding-time{margin-top:35px;font-size:clamp(1.45rem,3.2vw,2.15rem);letter-spacing:.18em;text-transform:uppercase;color:var(--ivory);font-weight:600;line-height:1}
 
-    .countdown{width:min(620px,100%);margin:48px auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-    .count-item{position:relative;padding:17px 8px;border-left:1px solid rgba(205,180,119,0.25)}
-    .count-item:last-child{border-right:1px solid rgba(205,180,119,0.25)}
-    .count-number{display:block;font-family:var(--serif);font-size:clamp(2rem,4vw,2.8rem);font-weight:400;color:var(--ivory)}
-    .count-label{display:block;margin-top:3px;font-size:8px;letter-spacing:0.25em;text-transform:uppercase;color:var(--champagne)}
-    .countdown-message{width:min(620px,100%);margin:48px auto 0;padding:20px 12px;color:var(--champagne-light);font-family:var(--serif);font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:400;text-align:center;text-shadow:var(--text-outline)}
-    [hidden]{display:none!important}
+.countdown{width:min(620px,100%);margin:48px auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.count-item{position:relative;padding:17px 8px;border-left:1px solid rgba(205,180,119,.25)}
+.count-item:last-child{border-right:1px solid rgba(205,180,119,.25)}
+.count-number{display:block;font-family:var(--serif);font-size:clamp(2rem,4vw,2.8rem);font-weight:400;color:var(--ivory)}
+.count-label{display:block;margin-top:3px;font-size:8px;letter-spacing:.25em;text-transform:uppercase;color:var(--champagne)}
+.countdown-message{display:none;width:min(700px,100%);margin:48px auto 0;font-family:var(--serif);font-size:clamp(1.8rem,6vw,3rem);line-height:1.15;font-weight:400;color:var(--ivory);text-align:center}
 
-    .location{min-height:92vh;min-height:92svh}
-    .location-panel{width:min(790px,100%);margin:0 auto;padding:clamp(42px,8vw,75px) clamp(24px,7vw,70px);background:linear-gradient(135deg,rgba(28,39,29,0.25),rgba(28,39,29,0.07));border-top:1px solid rgba(248,243,232,0.23);border-bottom:1px solid rgba(205,180,119,0.28);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
-    .location-title{margin-top:25px;font-family:var(--serif);font-size:clamp(2.35rem,5vw,3.8rem);font-weight:400;line-height:1.05;color:var(--ivory)}
-    .location-address{margin-top:28px;font-family:var(--serif);font-size:clamp(1.2rem,2.5vw,1.45rem);line-height:1.65;color:var(--ivory-soft)}
-    .location-reference{margin-top:19px;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--champagne)}
-    .map-button{display:inline-flex;align-items:center;justify-content:center;margin-top:36px;min-width:190px;padding:15px 28px;border:1px solid rgba(205,180,119,0.68);background:rgba(38,49,38,0.14);color:var(--ivory);text-decoration:none;font-size:9px;letter-spacing:0.27em;text-transform:uppercase;transition:background 0.35s ease,color 0.35s ease,transform 0.35s ease,border-color 0.35s ease}
-    .map-button:hover{background:var(--champagne);border-color:var(--champagne);color:var(--olive-950);transform:translateY(-2px)}
+.location{min-height:92vh;min-height:92svh}
+.location-panel{width:min(790px,100%);margin:0 auto;padding:clamp(42px,8vw,75px) clamp(24px,7vw,70px);background:linear-gradient(135deg,rgba(28,39,29,.25),rgba(28,39,29,.07));border-top:1px solid rgba(248,243,232,.23);border-bottom:1px solid rgba(205,180,119,.28);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.location-title{margin-top:25px;font-family:var(--serif);font-size:clamp(2.35rem,5vw,3.8rem);font-weight:400;line-height:1.05;color:var(--ivory)}
+.location-address{margin-top:28px;font-family:var(--serif);font-size:clamp(1.2rem,2.5vw,1.45rem);line-height:1.65;color:var(--ivory-soft)}
+.location-reference{margin-top:19px;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--champagne)}
+.map-button{display:inline-flex;align-items:center;justify-content:center;margin-top:36px;min-width:190px;padding:15px 28px;border:1px solid rgba(205,180,119,.68);background:rgba(38,49,38,.14);color:var(--ivory);text-decoration:none;font-size:9px;letter-spacing:.27em;text-transform:uppercase;transition:background .35s ease,color .35s ease,transform .35s ease,border-color .35s ease}
+.map-button:hover{background:var(--champagne);border-color:var(--champagne);color:var(--olive-950);transform:translateY(-2px)}
 
-    .closing{min-height:92vh;min-height:92svh}
-    .closing-label{margin-bottom:25px}
-    .closing-quote{max-width:820px;margin:0 auto;font-family:var(--serif);font-size:clamp(2.5rem,6vw,5rem);font-weight:300;font-style:italic;line-height:1.05;color:var(--ivory);text-shadow:var(--text-outline)}
-    .closing-names{margin-top:42px;font-family:var(--display);font-size:clamp(3.1rem,7vw,5.7rem);color:var(--ivory);letter-spacing:-0.03em}
-    .closing-date{margin-top:12px;font-family:var(--sans);font-size:9px;letter-spacing:0.38em;text-transform:uppercase;color:var(--champagne)}
-    .closing-signature{margin-top:32px;font-family:var(--serif);font-size:1.15rem;font-style:italic;color:var(--ivory-muted)}
+.closing{min-height:92vh;min-height:92svh}
+.closing-label{margin-bottom:25px}
+.closing-quote{max-width:820px;margin:0 auto;font-family:var(--serif);font-size:clamp(2.5rem,6vw,5rem);font-weight:300;font-style:italic;line-height:1.05;color:var(--ivory);text-shadow:var(--text-outline)}
+.closing-names{margin-top:42px;font-family:var(--display);font-size:clamp(3.1rem,7vw,5.7rem);color:var(--ivory);letter-spacing:-.03em}
+.closing-date{margin-top:12px;font-family:var(--sans);font-size:9px;letter-spacing:.38em;text-transform:uppercase;color:var(--champagne)}
+.closing-signature{max-width:720px;margin:32px auto 0;font-family:var(--serif);font-size:clamp(1.1rem,3.8vw,1.45rem);line-height:1.5;font-style:italic;color:var(--ivory-muted);text-wrap:balance}
 
-    footer{position:relative;padding:30px 20px 55px;text-align:center}
-    footer::before{content:"";display:block;width:70px;height:1px;margin:0 auto 25px;background:linear-gradient(90deg,transparent,var(--champagne),transparent);opacity:0.5}
-    footer p{font-size:8px;letter-spacing:0.32em;text-transform:uppercase;color:rgba(248,243,232,0.42)}
+footer{position:relative;padding:30px 20px 55px;text-align:center}
+footer::before{content:"";display:block;width:70px;height:1px;margin:0 auto 25px;background:linear-gradient(90deg,transparent,var(--champagne),transparent);opacity:.5}
+footer p{font-size:8px;letter-spacing:.32em;text-transform:uppercase;color:rgba(248,243,232,.42)}
 
-    .reveal{opacity:0;transform:translateY(28px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
-    .reveal.visible{opacity:1;transform:translateY(0)}
-    .side-mark{position:absolute;width:75px;height:75px;opacity:0.35;pointer-events:none}
-    .side-mark::before,.side-mark::after{content:"";position:absolute;background:var(--champagne)}
-    .side-mark::before{width:1px;height:55px;top:0;right:0}
-    .side-mark::after{width:55px;height:1px;top:0;right:0}
-    .mark-top{top:30px;right:30px}
-    .mark-bottom{bottom:30px;left:30px;transform:rotate(180deg)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.side-mark{position:absolute;width:75px;height:75px;opacity:.35;pointer-events:none}
+.side-mark::before,.side-mark::after{content:"";position:absolute;background:var(--champagne)}
+.side-mark::before{width:1px;height:55px;top:0;right:0}
+.side-mark::after{width:55px;height:1px;top:0;right:0}
+.mark-top{top:30px;right:30px}
+.mark-bottom{bottom:30px;left:30px;transform:rotate(180deg)}
 
-    @media(max-width:700px){
-      section{padding-left:18px;padding-right:18px}
-      .hero{padding-top:45px;padding-bottom:65px}
-      .scene-photo{background-position:center center}
-      .hero-eyebrow{max-width:310px;margin-left:auto;margin-right:auto;line-height:1.8}
-      .hero-name{font-size:clamp(4.5rem,21vw,7rem)}
-      .hero-date{font-size:10px;letter-spacing:0.26em}
-      .story-panel,.location-panel{padding:43px 22px}
-      .story-title{font-size:clamp(3.2rem,15vw,4.7rem)}
-      .story-copy{font-size:1.25rem;line-height:1.55}
-      .wedding-number{font-size:clamp(8rem,37vw,12rem)}
-      .wedding-month{margin-top:42px}
-      .wedding-time{font-size:1.9rem;letter-spacing:0.13em;margin-top:30px}
-      .countdown{gap:0}
-      .count-item{padding:14px 4px}
-      .count-number{font-size:1.8rem}
-      .count-label{font-size:7px;letter-spacing:0.15em}
-      .location-title{font-size:2.25rem}
-      .location-address{font-size:1.2rem}
-      .location-reference{font-size:8.5px}
-      .map-button{font-size:9px}
-      .closing-quote{font-size:clamp(2.35rem,10vw,3.5rem)}
-      .side-mark{width:52px;height:52px}
-      .side-mark::before{height:40px}
-      .side-mark::after{width:40px}
-      .mark-top{top:20px;right:20px}
-      .mark-bottom{bottom:20px;left:20px}
-    }
-
-    @media(max-width:380px){
-      .hero-name{font-size:4rem}
-      .hero-date{font-size:9px;letter-spacing:0.21em}
-      .count-number{font-size:1.55rem}
-      .count-label{font-size:6px;letter-spacing:0.13em}
-      .location-reference{font-size:8px}
-    }
-
-    @media(prefers-reduced-motion:reduce){
-      html{scroll-behavior:auto}
-      *,*::before,*::after{animation:none!important;transition:none!important}
-      .reveal{opacity:1;transform:none}
-      .hero-content{opacity:1;visibility:visible;transform:none}
-    }
-  </style>
+@media(max-width:700px){
+section{padding-left:18px;padding-right:18px}
+.hero{padding-top:45px;padding-bottom:65px}
+.scene-photo{background-position:center center}
+.hero-eyebrow{max-width:310px;margin-left:auto;margin-right:auto;line-height:1.8}
+.hero-name{font-size:clamp(4.5rem,21vw,7rem)}
+.hero-date{font-size:10px;letter-spacing:.26em}
+.story-panel,.location-panel{padding:43px 22px}
+.story-title{font-size:clamp(3.2rem,15vw,4.7rem)}
+.story-copy{font-size:1.25rem;line-height:1.55}
+.wedding-number{font-size:clamp(8rem,37vw,12rem)}
+.wedding-month{margin-top:42px}
+.wedding-time{font-size:1.9rem;letter-spacing:.13em;margin-top:30px}
+.countdown{gap:0}
+.count-item{padding:14px 4px}
+.count-number{font-size:1.8rem}
+.count-label{font-size:7px;letter-spacing:.15em}
+.countdown-message{margin-top:36px;font-size:clamp(1.7rem,7vw,2.5rem)}
+.closing-signature{font-size:clamp(1.05rem,4.5vw,1.25rem);line-height:1.55}
+.location-title{font-size:2.25rem}
+.location-address{font-size:1.2rem}
+.location-reference{font-size:8.5px}
+.map-button{font-size:9px}
+.closing-quote{font-size:clamp(2.35rem,10vw,3.5rem)}
+.side-mark{width:52px;height:52px}
+.side-mark::before{height:40px}
+.side-mark::after{width:40px}
+.mark-top{top:20px;right:20px}
+.mark-bottom{bottom:20px;left:20px}
+}
+@media(max-width:380px){
+.hero-name{font-size:4rem}
+.hero-date{font-size:9px;letter-spacing:.21em}
+.count-number{font-size:1.55rem}
+.count-label{font-size:6px;letter-spacing:.13em}
+.location-reference{font-size:8px}
+}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+*,*::before,*::after{animation:none!important;transition:none!important}
+.reveal{opacity:1;transform:none}
+.hero-content{opacity:1;visibility:visible;transform:none}
+}
+</style>
 </head>
 
 <body>
-  <div class="progress">
-    <div class="progress-bar" id="progressBar"></div>
-  </div>
+<div class="progress"><div class="progress-bar" id="progressBar"></div></div>
 
-  <div class="scene">
-    <div class="scene-photo" id="scenePhoto"></div>
-    <div class="olive-overlay" id="oliveOverlay"></div>
-    <div class="warm-overlay" id="warmOverlay"></div>
-    <div class="vignette"></div>
-  </div>
+<div class="scene">
+<div class="scene-photo" id="scenePhoto"></div>
+<div class="olive-overlay" id="oliveOverlay"></div>
+<div class="warm-overlay" id="warmOverlay"></div>
+<div class="vignette"></div>
+</div>
+<div class="grain"></div>
 
-  <div class="grain"></div>
+<!-- PORTADA -->
+<section class="hero">
+<div class="side-mark mark-top"></div>
+<div class="side-mark mark-bottom"></div>
+<div class="container hero-content">
+<div class="eyebrow hero-eyebrow">Dios, como centro de nuestra historia</div>
+<div class="hero-names">
+<div class="hero-name">Samuel</div>
+<div class="hero-amp">e</div>
+<div class="hero-name">Ixkaj</div>
+</div>
+<div class="hero-date">19 · DICIEMBRE · 2026</div>
+<div class="hairline"></div>
+<div class="diamond"></div>
+</div>
+<div class="hero-bottom"><span>Descubre</span><div class="scroll-line"></div></div>
+</section>
 
-  <section class="hero">
-    <div class="side-mark mark-top"></div>
-    <div class="side-mark mark-bottom"></div>
+<!-- LA BODA Y CONTADOR -->
+<section class="wedding">
+<div class="container reveal">
+<div class="eyebrow">La boda</div>
+<div class="wedding-number">19</div>
+<div class="wedding-month">Diciembre</div>
+<div class="wedding-year">2026</div>
+<div class="hairline"></div>
+<div class="wedding-time">3:00 P. M.</div>
 
-    <div class="container hero-content">
-      <div class="eyebrow hero-eyebrow">
-        Dios, centro de nuestra historia
-      </div>
+<div class="countdown" aria-label="Cuenta regresiva para nuestra boda">
+<div class="count-item"><span class="count-number" id="days">00</span><span class="count-label">Días</span></div>
+<div class="count-item"><span class="count-number" id="hours">00</span><span class="count-label">Horas</span></div>
+<div class="count-item"><span class="count-number" id="minutes">00</span><span class="count-label">Minutos</span></div>
+<div class="count-item"><span class="count-number" id="seconds">00</span><span class="count-label">Segundos</span></div>
+</div>
 
-      <div class="hero-names">
-        <div class="hero-name">Samuel</div>
-        <div class="hero-amp">e</div>
-        <div class="hero-name">Ixkaj</div>
-      </div>
+<div class="countdown-message" id="countdownMessage" role="status" aria-live="polite">¡Llegó el gran día!</div>
+</div>
+</section>
 
-      <div class="hero-date">19 · DICIEMBRE · 2026</div>
-      <div class="hairline"></div>
-      <div class="diamond"></div>
-    </div>
+<!-- UBICACIÓN -->
+<section class="location">
+<div class="container">
+<div class="location-panel reveal">
+<div class="eyebrow">Donde comienza este nuevo capítulo</div>
+<h2 class="location-title">Complejo del Colegio<br>Simeón Cañas</h2>
+<div class="hairline"></div>
+<div class="location-address">1ª Calle, 6ª Avenida<br>Colonia La Primavera<br>Chimaltenango</div>
+<div class="location-reference">Referencia: Sector de las menonitas</div>
+<a class="map-button" href="https://maps.app.goo.gl/ENU1dBfwFDbRUKw37" target="_blank" rel="noopener noreferrer" aria-label="Abrir ubicación de la boda en Google Maps">Ver ubicación</a>
+</div>
+</div>
+</section>
 
-    <div class="hero-bottom">
-      <span>Desliza para descubrir</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
+<!-- CIERRE -->
+<section class="closing">
+<div class="container reveal">
+<div class="eyebrow closing-label">Con amor y gratitud</div>
+<div class="closing-quote">Lo que nosotros no planeamos,<br>Dios ya lo había dispuesto.</div>
+<div class="hairline"></div>
+<div class="closing-names">Samuel &amp; Ixkaj</div>
+<div class="closing-date">19 · XII · 2026</div>
+<div class="closing-signature">Será una bendición contar con su presencia en este día tan especial.</div>
+</div>
+</section>
 
-  <section class="story">
-    <div class="container">
-      <div class="story-panel reveal">
-        <div class="eyebrow">Nuestra historia</div>
+<footer><p>Samuel e Ixkaj · 19 · XII · 2026</p></footer>
 
-        <h2 class="story-title">
-          Dos caminos.<br />
-          Una historia<br />
-          escrita por Dios.
-        </h2>
+<script>
+/* CONTADOR: boda el 19 de diciembre de 2026 a las 3:00 p. m. en Guatemala */
+const weddingDate = new Date("2026-12-19T15:00:00-06:00").getTime();
 
-        <div class="hairline"></div>
+function updateCountdown(){
+const now = Date.now();
+const distance = weddingDate - now;
+const countdown = document.querySelector(".countdown");
+const countdownMessage = document.getElementById("countdownMessage");
 
-        <div class="story-copy">
-          <p>
-            Cada uno seguía su propio camino,
-            sin imaginar que Dios ya estaba
-            preparando nuestro encuentro.
-          </p>
+if(distance <= 0){
+countdown.style.display = "none";
+countdownMessage.style.display = "block";
+return;
+}
 
-          <p>
-            Hoy entendemos que lo que nosotros
-            no planeamos,
-            <span class="story-highlight">Él ya lo había dispuesto.</span>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+countdown.style.display = "grid";
+countdownMessage.style.display = "none";
 
-  <section class="wedding">
-    <div class="container reveal">
-      <div class="eyebrow">Nuestra fecha</div>
+const days = Math.floor(distance / (1000*60*60*24));
+const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+const seconds = Math.floor((distance % (1000*60)) / 1000);
 
-      <div class="wedding-number">19</div>
-      <div class="wedding-month">Diciembre</div>
-      <div class="wedding-year">2026</div>
-      <div class="hairline"></div>
-      <div class="wedding-time">3:00 P. M.</div>
+document.getElementById("days").textContent = String(days).padStart(2,"0");
+document.getElementById("hours").textContent = String(hours).padStart(2,"0");
+document.getElementById("minutes").textContent = String(minutes).padStart(2,"0");
+document.getElementById("seconds").textContent = String(seconds).padStart(2,"0");
+}
+updateCountdown();
+setInterval(updateCountdown,1000);
 
-      <div class="countdown" aria-label="Cuenta regresiva para nuestra boda">
-        <div class="count-item">
-          <span class="count-number" id="days">00</span>
-          <span class="count-label">Días</span>
-        </div>
-        <div class="count-item">
-          <span class="count-number" id="hours">00</span>
-          <span class="count-label">Horas</span>
-        </div>
-        <div class="count-item">
-          <span class="count-number" id="minutes">00</span>
-          <span class="count-label">Minutos</span>
-        </div>
-        <div class="count-item">
-          <span class="count-number" id="seconds">00</span>
-          <span class="count-label">Segundos</span>
-        </div>
-      </div>
+/* BARRA DE PROGRESO Y FONDO */
+const progressBar = document.getElementById("progressBar");
+const scenePhoto = document.getElementById("scenePhoto");
+const warmOverlay = document.getElementById("warmOverlay");
+const oliveOverlay = document.getElementById("oliveOverlay");
 
-      <div class="countdown-message" id="countdownMessage" hidden>
-        ¡Llegó el gran día!
-      </div>
-    </div>
-  </section>
+function updateScene(){
+const scrollTop = window.scrollY;
+const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+const progress = documentHeight > 0 ? Math.min(1,Math.max(0,scrollTop/documentHeight)) : 0;
 
-  <section class="location">
-    <div class="container">
-      <div class="location-panel reveal">
-        <div class="eyebrow">El lugar de nuestra celebración</div>
+progressBar.style.width = `${progress*100}%`;
+const photoScale = 1.045 + progress*0.018;
+const photoY = progress*-0.8;
+scenePhoto.style.transform = `scale(${photoScale}) translateY(${photoY}%)`;
 
-        <h2 class="location-title">
-          Complejo del Colegio<br />
-          Simeón Cañas
-        </h2>
+const brightness = 1.04 - progress*0.11;
+const saturation = 0.88 + progress*0.05;
+scenePhoto.style.filter = `brightness(${brightness}) saturate(${saturation}) contrast(1.03)`;
+warmOverlay.style.opacity = 0.90 - progress*0.55;
+oliveOverlay.style.opacity = 0.68 + progress*0.12;
+}
 
-        <div class="hairline"></div>
+let ticking = false;
+window.addEventListener("scroll",()=>{
+if(!ticking){
+window.requestAnimationFrame(()=>{
+updateScene();
+ticking = false;
+});
+ticking = true;
+}
+},{passive:true});
+updateScene();
 
-        <div class="location-address">
-          1ª Calle, 6ª Avenida<br />
-          Colonia La Primavera<br />
-          Chimaltenango
-        </div>
-
-        <div class="location-reference">
-          Punto de referencia: Sector de las menonitas
-        </div>
-
-        <a
-          class="map-button"
-          href="https://maps.app.goo.gl/ENU1dBfwFDbRUKw37"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Abrir ubicación de la boda en Google Maps"
-        >
-          Cómo llegar
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="closing">
-    <div class="container reveal">
-      <div class="eyebrow closing-label">Con amor y gratitud</div>
-
-      <div class="closing-quote">
-        Lo que nosotros no planeamos,<br />
-        Dios ya lo había dispuesto.
-      </div>
-
-      <div class="hairline"></div>
-
-      <div class="closing-names">Samuel & Ixkaj</div>
-      <div class="closing-date">19 · XII · 2026</div>
-
-      <div class="closing-signature">
-        Será una bendición contar con su presencia en este día tan especial.
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>Samuel e Ixkaj · 19 · XII · 2026</p>
-  </footer>
-
-  <script>
-    const weddingDate = new Date("2026-12-19T15:00:00-06:00").getTime();
-
-    function updateCountdown() {
-      const now = Date.now();
-      const distance = weddingDate - now;
-
-      const countdown = document.querySelector(".countdown");
-      const message = document.getElementById("countdownMessage");
-
-      if (distance <= 0) {
-        countdown.hidden = true;
-        message.hidden = false;
-        return;
-      }
-
-      countdown.hidden = false;
-      message.hidden = true;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      const minutes = Math.floor(
-        (distance % (1000 * 60 * 60)) / (1000 * 60)
-      );
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById("days").textContent = String(days).padStart(2, "0");
-      document.getElementById("hours").textContent = String(hours).padStart(2, "0");
-      document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
-      document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-
-    const progressBar = document.getElementById("progressBar");
-    const scenePhoto = document.getElementById("scenePhoto");
-    const warmOverlay = document.getElementById("warmOverlay");
-    const oliveOverlay = document.getElementById("oliveOverlay");
-
-    function updateScene() {
-      const scrollTop = window.scrollY;
-      const documentHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-
-      const progress = documentHeight > 0
-        ? Math.min(1, Math.max(0, scrollTop / documentHeight))
-        : 0;
-
-      progressBar.style.width = `${progress * 100}%`;
-
-      const photoScale = 1.045 + progress * 0.018;
-      const photoY = progress * -0.8;
-
-      scenePhoto.style.transform =
-        `scale(${photoScale}) translateY(${photoY}%)`;
-
-      const brightness = 1.04 - progress * 0.11;
-      const saturation = 0.88 + progress * 0.05;
-
-      scenePhoto.style.filter =
-        `brightness(${brightness}) saturate(${saturation}) contrast(1.03)`;
-
-      warmOverlay.style.opacity = 0.90 - progress * 0.55;
-      oliveOverlay.style.opacity = 0.68 + progress * 0.12;
-    }
-
-    let ticking = false;
-
-    window.addEventListener("scroll", () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          updateScene();
-          ticking = false;
-        });
-
-        ticking = true;
-      }
-    }, { passive: true });
-
-    updateScene();
-
-    const revealElements = document.querySelectorAll(".reveal");
-
-    if ("IntersectionObserver" in window) {
-      const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.16 });
-
-      revealElements.forEach((element) => {
-        revealObserver.observe(element);
-      });
-    } else {
-      revealElements.forEach((element) => {
-        element.classList.add("visible");
-      });
-    }
-  </script>
+/* APARICIÓN SUAVE DE LAS SECCIONES */
+const revealElements = document.querySelectorAll(".reveal");
+if("IntersectionObserver" in window){
+const revealObserver = new IntersectionObserver((entries)=>{
+entries.forEach((entry)=>{
+if(entry.isIntersecting){
+entry.target.classList.add("visible");
+revealObserver.unobserve(entry.target);
+}
+});
+},{threshold:0.16});
+revealElements.forEach(element=>revealObserver.observe(element));
+}else{
+revealElements.forEach(element=>element.classList.add("visible"));
+}
+</script>
 </body>
 </html>
