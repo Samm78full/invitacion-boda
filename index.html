@@ -1,71 +1,28 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-  />
-
-  <title>Samuel e Ixkaj · 19 XII 2026</title>
-
-  <meta
-    name="description"
-    content="Samuel e Ixkaj · 19 de diciembre de 2026"
-  />
+  <title>Samuel & Ixkaj · Nuestra boda · 19 de diciembre de 2026</title>
+  <meta name="description" content="Con la bendición de Dios, Samuel e Ixkaj celebran su unión el 19 de diciembre de 2026. Será una alegría compartir este día tan especial contigo." />
+  <meta name="theme-color" content="#273126" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  />
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Italiana&family=Montserrat:wght@300;400;500;600&display=swap"
-    rel="stylesheet"
-  />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Italiana&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <style>
-    /* =========================================================
-       01 · RESET
-    ========================================================== */
+    /* =========================================
+       01. BASE Y PALETA
+    ========================================= */
 
-    *,
-    *::before,
-    *::after {
+    *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: #273126;
-      color: #f7f2e8;
-      font-family: "Montserrat", sans-serif;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    /* =========================================================
-       02 · PALETA PREMIUM
-    ========================================================== */
 
     :root {
       --olive-950: #151d16;
@@ -73,59 +30,64 @@
       --olive-800: #273126;
       --olive-700: #3d4934;
       --olive-600: #556047;
-      --olive-500: #70795b;
 
       --ivory: #f8f3e8;
-      --ivory-soft: rgba(248, 243, 232, 0.82);
-      --ivory-muted: rgba(248, 243, 232, 0.62);
+      --ivory-soft: rgba(248,243,232,.82);
+      --ivory-muted: rgba(248,243,232,.62);
 
       --champagne: #cdb477;
       --champagne-light: #e1ce9b;
-      --champagne-soft: rgba(205, 180, 119, 0.55);
-
-      --white: #ffffff;
-
-      --shadow: rgba(10, 16, 11, 0.35);
-      --text-outline:
-        1px 0 1px rgba(8, 13, 9, 0.82),
-        -1px 0 1px rgba(8, 13, 9, 0.82),
-        0 1px 1px rgba(8, 13, 9, 0.82),
-        0 -1px 1px rgba(8, 13, 9, 0.82),
-        0 3px 12px rgba(8, 13, 9, 0.62);
 
       --serif: "Cormorant Garamond", serif;
       --display: "Italiana", serif;
       --sans: "Montserrat", sans-serif;
+
+      --text-shadow:
+        0 2px 12px rgba(8,13,9,.62),
+        0 0 2px rgba(8,13,9,.8);
     }
 
-    /* =========================================================
-       03 · BARRA DE PROGRESO
-    ========================================================== */
-
-    .progress {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.06);
+    html {
+      scroll-behavior: smooth;
+      background: var(--olive-800);
     }
 
-    .progress-bar {
-      width: 0%;
-      height: 100%;
-      background: linear-gradient(
-        90deg,
-        var(--champagne),
-        var(--champagne-light)
-      );
-      transform-origin: left;
+    body {
+      min-width: 320px;
+      overflow-x: hidden;
+      background: var(--olive-800);
+      color: var(--ivory);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
-    /* =========================================================
-       04 · ESCENA DE FONDO
-    ========================================================== */
+    a {
+      color: inherit;
+    }
+
+    section {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 92vh;
+      min-height: 92svh;
+      padding: clamp(80px, 12vw, 140px) 24px;
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      text-align: center;
+      text-shadow: var(--text-shadow);
+    }
+
+    /* =========================================
+       02. FONDO FOTOGRÁFICO
+    ========================================= */
 
     .scene {
       position: fixed;
@@ -138,213 +100,191 @@
     .scene-photo {
       position: absolute;
       inset: -3%;
-
       background-image: url("lugar-boda.jpg");
       background-size: cover;
-      background-position: center center;
+      background-position: center;
       background-repeat: no-repeat;
-
       transform: scale(1.045);
-
-      filter:
-        brightness(1.04)
-        saturate(0.88)
-        contrast(1.03);
-
+      filter: brightness(1.04) saturate(.88) contrast(1.03);
       will-change: transform, filter;
     }
 
     .olive-overlay {
       position: absolute;
       inset: 0;
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(68, 81, 52, 0.22),
-          rgba(28, 39, 29, 0.08)
-        );
-
-      opacity: 0.7;
+      background: linear-gradient(
+        135deg,
+        rgba(68,81,52,.22),
+        rgba(28,39,29,.08)
+      );
+      opacity: .7;
       mix-blend-mode: multiply;
     }
 
     .warm-overlay {
       position: absolute;
       inset: 0;
-
-      background:
-        radial-gradient(
-          circle at 50% 12%,
-          rgba(255, 226, 166, 0.20),
-          rgba(255, 226, 166, 0.05) 28%,
-          transparent 55%
-        );
-
-      opacity: 0.9;
+      background: radial-gradient(
+        circle at 50% 12%,
+        rgba(255,226,166,.20),
+        rgba(255,226,166,.05) 28%,
+        transparent 55%
+      );
+      opacity: .9;
     }
 
     .vignette {
       position: absolute;
       inset: 0;
-
-      background:
-        radial-gradient(
-          ellipse at center,
-          transparent 34%,
-          rgba(15, 22, 16, 0.08) 63%,
-          rgba(11, 17, 12, 0.46) 100%
-        );
-
       pointer-events: none;
+      background: radial-gradient(
+        ellipse at center,
+        transparent 34%,
+        rgba(15,22,16,.08) 63%,
+        rgba(11,17,12,.46) 100%
+      );
     }
-
-    /* =========================================================
-       05 · TEXTURA SUTIL
-    ========================================================== */
 
     .grain {
       position: fixed;
       inset: 0;
       z-index: 999;
       pointer-events: none;
-
-      opacity: 0.035;
-
-      background-image:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+      opacity: .035;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
     }
 
-    /* =========================================================
-       06 · ESTRUCTURA GENERAL
-    ========================================================== */
+    /* =========================================
+       03. BARRA DE PROGRESO
+    ========================================= */
 
-    section {
-      position: relative;
-
-      min-height: 100vh;
-      min-height: 100svh;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      padding:
-        clamp(90px, 12vw, 150px)
-        24px;
+    .progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      width: 100%;
+      height: 2px;
+      background: rgba(255,255,255,.06);
     }
 
-    .container {
-      position: relative;
-
-      width: min(1100px, 100%);
-      margin: 0 auto;
-
-      text-align: center;
-      z-index: 2;
-
-      text-shadow: var(--text-outline);
+    .progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        var(--champagne),
+        var(--champagne-light)
+      );
+      transform-origin: left;
     }
 
-    /* =========================================================
-       07 · MICRO DETALLES DE LUJO
-    ========================================================== */
+    /* =========================================
+       04. DETALLES DECORATIVOS
+    ========================================= */
 
     .eyebrow {
-      font-family: var(--sans);
-
-      font-size: 10px;
-      line-height: 1.5;
-
-      letter-spacing: 0.36em;
-
-      text-transform: uppercase;
-
       color: var(--champagne-light);
-
+      font-family: var(--sans);
+      font-size: 10px;
       font-weight: 500;
+      line-height: 1.8;
+      letter-spacing: .32em;
+      text-transform: uppercase;
     }
 
     .hairline {
       width: 74px;
       height: 1px;
-
-      margin:
-        25px
-        auto;
-
-      background:
-        linear-gradient(
-          90deg,
-          transparent,
-          var(--champagne),
-          transparent
-        );
-
-      opacity: 0.8;
+      margin: 25px auto;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--champagne),
+        transparent
+      );
+      opacity: .8;
     }
 
     .diamond {
       width: 5px;
       height: 5px;
-
       margin: 0 auto;
-
       background: var(--champagne);
-
       transform: rotate(45deg);
-
-      box-shadow:
-        0 0 12px rgba(205, 180, 119, 0.35);
+      box-shadow: 0 0 12px rgba(205,180,119,.35);
     }
 
-    /* =========================================================
-       08 · HERO / PORTADA
-    ========================================================== */
+    .side-mark {
+      position: absolute;
+      width: 75px;
+      height: 75px;
+      opacity: .35;
+      pointer-events: none;
+    }
+
+    .side-mark::before,
+    .side-mark::after {
+      content: "";
+      position: absolute;
+      background: var(--champagne);
+    }
+
+    .side-mark::before {
+      top: 0;
+      right: 0;
+      width: 1px;
+      height: 55px;
+    }
+
+    .side-mark::after {
+      top: 0;
+      right: 0;
+      width: 55px;
+      height: 1px;
+    }
+
+    .mark-top {
+      top: 30px;
+      right: 30px;
+    }
+
+    .mark-bottom {
+      bottom: 30px;
+      left: 30px;
+      transform: rotate(180deg);
+    }
+
+    /* =========================================
+       05. PORTADA
+    ========================================= */
 
     .hero {
       min-height: 100vh;
       min-height: 100svh;
-
-      padding:
-        50px
-        24px
-        70px;
-
+      padding: 50px 24px 70px;
       overflow: hidden;
     }
 
     .hero::after {
       content: "";
-
       position: absolute;
-
-      left: 50%;
       bottom: 0;
-
+      left: 50%;
       width: min(800px, 100%);
       height: 1px;
-
       transform: translateX(-50%);
-
-      background:
-        linear-gradient(
-          90deg,
-          transparent,
-          rgba(205, 180, 119, 0.35),
-          transparent
-        );
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(205,180,119,.35),
+        transparent
+      );
     }
-
-    /* CORRECCIÓN: la portada queda visible sin depender de animaciones. */
 
     .hero-content {
       opacity: 1;
       visibility: visible;
-      transform: none;
-      -webkit-transform: none;
-      animation: none;
-      -webkit-animation: none;
     }
 
     .hero-eyebrow {
@@ -352,225 +292,79 @@
     }
 
     .hero-names {
-      margin-top: 30px;
-
       display: flex;
       flex-direction: column;
       align-items: center;
-
-      line-height: 0.74;
+      margin-top: 30px;
+      line-height: .78;
     }
 
     .hero-name {
-      font-family: var(--display);
-
-      font-size:
-        clamp(
-          5rem,
-          15vw,
-          10.5rem
-        );
-
-      font-weight: 400;
-
-      letter-spacing: -0.045em;
-
       color: var(--ivory);
-
-      text-shadow: var(--text-outline);
+      font-family: var(--display);
+      font-size: clamp(5rem, 15vw, 10.5rem);
+      font-weight: 400;
+      letter-spacing: -.045em;
+      text-shadow: var(--text-shadow);
     }
 
     .hero-amp {
+      margin: 15px 0;
+      color: var(--champagne-light);
       font-family: var(--serif);
-
-      font-size:
-        clamp(
-          2.5rem,
-          6vw,
-          4.5rem
-        );
-
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
       font-weight: 300;
       font-style: italic;
-
-      color: var(--champagne-light);
-
       line-height: 1.2;
-
-      margin:
-        15px
-        0;
     }
 
     .hero-date {
       margin-top: 46px;
-
-      font-family: var(--sans);
-
-      font-size: 11px;
-
-      letter-spacing: 0.40em;
-
-      text-transform: uppercase;
-
       color: var(--ivory);
-
+      font-family: var(--sans);
+      font-size: 11px;
       font-weight: 500;
+      letter-spacing: .4em;
+      text-transform: uppercase;
     }
 
     .hero-bottom {
       position: absolute;
-
-      left: 50%;
       bottom: 26px;
-
-      transform: translateX(-50%);
-
+      left: 50%;
       display: flex;
       flex-direction: column;
       align-items: center;
-
       gap: 10px;
-
       color: var(--ivory-muted);
-
       font-size: 8px;
-
-      letter-spacing: 0.32em;
-
+      letter-spacing: .32em;
       text-transform: uppercase;
-
-      text-shadow: var(--text-outline);
+      transform: translateX(-50%);
+      text-shadow: var(--text-shadow);
     }
 
     .scroll-line {
       width: 1px;
       height: 42px;
-
-      background:
-        linear-gradient(
-          var(--champagne),
-          transparent
-        );
-
-      animation:
-        scrollPulse
-        2.2s
-        ease-in-out
-        infinite;
+      background: linear-gradient(var(--champagne), transparent);
+      animation: scrollPulse 2.2s ease-in-out infinite;
     }
 
     @keyframes scrollPulse {
-      0%,
-      100% {
-        opacity: 0.25;
-        transform: scaleY(0.65);
+      0%, 100% {
+        opacity: .25;
+        transform: scaleY(.65);
       }
-
       50% {
         opacity: 1;
         transform: scaleY(1);
       }
     }
 
-    /* =========================================================
-       09 · HISTORIA
-    ========================================================== */
-
-    .story {
-      min-height: 92vh;
-      min-height: 92svh;
-    }
-
-    .story-panel {
-      width: min(790px, 100%);
-
-      margin: 0 auto;
-
-      padding:
-        clamp(45px, 8vw, 80px)
-        clamp(25px, 7vw, 75px);
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(27, 39, 28, 0.22),
-          rgba(27, 39, 28, 0.07)
-        );
-
-      border-top:
-        1px solid
-        rgba(248, 243, 232, 0.24);
-
-      border-bottom:
-        1px solid
-        rgba(205, 180, 119, 0.30);
-
-      box-shadow:
-        0 30px 100px
-        rgba(8, 13, 9, 0.18);
-
-      backdrop-filter: blur(3px);
-      -webkit-backdrop-filter: blur(3px);
-    }
-
-    .story-title {
-      margin-top: 22px;
-
-      font-family: var(--serif);
-
-      font-size:
-        clamp(
-          3.4rem,
-          7vw,
-          5.9rem
-        );
-
-      font-weight: 300;
-
-      line-height: 0.92;
-
-      color: var(--ivory);
-
-      text-shadow: var(--text-outline);
-    }
-
-    .story-copy {
-      max-width: 640px;
-
-      margin:
-        35px
-        auto
-        0;
-
-      font-family: var(--serif);
-
-      font-size:
-        clamp(
-          1.3rem,
-          2.6vw,
-          1.65rem
-        );
-
-      line-height: 1.55;
-
-      font-weight: 300;
-
-      color: var(--ivory-soft);
-    }
-
-    .story-copy p + p {
-      margin-top: 22px;
-    }
-
-    .story-highlight {
-      color: var(--ivory);
-      font-weight: 500;
-    }
-
-    /* =========================================================
-       10 · LA BODA
-    ========================================================== */
+    /* =========================================
+       06. FECHA Y CUENTA REGRESIVA
+    ========================================= */
 
     .wedding {
       min-height: 100vh;
@@ -580,283 +374,152 @@
 
     .wedding-number {
       margin-top: 28px;
-
+      color: rgba(248,243,232,.96);
       font-family: var(--display);
-
-      font-size:
-        clamp(
-          8rem,
-          23vw,
-          16rem
-        );
-
-      line-height: 0.70;
-
-      color: rgba(248, 243, 232, 0.96);
-
-      letter-spacing: -0.055em;
-
-      text-shadow: var(--text-outline);
+      font-size: clamp(8rem, 23vw, 16rem);
+      line-height: .8;
+      letter-spacing: -.055em;
+      text-shadow: var(--text-shadow);
     }
 
     .wedding-month {
-      margin-top: 45px;
-
+      margin-top: 38px;
+      color: var(--champagne-light);
       font-family: var(--serif);
-
-      font-size:
-        clamp(
-          2.2rem,
-          5vw,
-          4rem
-        );
-
+      font-size: clamp(2.2rem, 5vw, 4rem);
       font-weight: 400;
       font-style: italic;
-
-      color: var(--champagne-light);
     }
 
     .wedding-year {
       margin-top: 5px;
-
-      font-family: var(--sans);
-
-      font-size: 11px;
-
-      letter-spacing: 0.45em;
-
-      text-transform: uppercase;
-
       color: var(--ivory-muted);
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: .45em;
+      text-transform: uppercase;
     }
 
     .wedding-time {
       margin-top: 35px;
-
-      font-size:
-        clamp(
-          1.45rem,
-          3.2vw,
-          2.15rem
-        );
-
-      letter-spacing: 0.18em;
-
-      text-transform: uppercase;
-
       color: var(--ivory);
-
+      font-size: clamp(1.45rem, 3.2vw, 2.15rem);
       font-weight: 600;
-
-      line-height: 1;
+      letter-spacing: .18em;
+      line-height: 1.2;
+      text-transform: uppercase;
     }
 
-    /* =========================================================
-       11 · CONTADOR
-    ========================================================== */
-
     .countdown {
-      width: min(620px, 100%);
-
-      margin:
-        48px
-        auto
-        0;
-
       display: grid;
-
-      grid-template-columns:
-        repeat(4, 1fr);
-
+      grid-template-columns: repeat(4, 1fr);
       gap: 10px;
+      width: min(620px, 100%);
+      margin: 48px auto 0;
     }
 
     .count-item {
-      position: relative;
-
-      padding:
-        17px
-        8px;
-
-      border-left:
-        1px solid
-        rgba(205, 180, 119, 0.25);
+      padding: 17px 8px;
+      border-left: 1px solid rgba(205,180,119,.25);
     }
 
     .count-item:last-child {
-      border-right:
-        1px solid
-        rgba(205, 180, 119, 0.25);
+      border-right: 1px solid rgba(205,180,119,.25);
     }
 
     .count-number {
       display: block;
-
-      font-family: var(--serif);
-
-      font-size:
-        clamp(
-          2rem,
-          4vw,
-          2.8rem
-        );
-
-      font-weight: 400;
-
       color: var(--ivory);
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 400;
+      font-variant-numeric: tabular-nums;
     }
 
     .count-label {
       display: block;
-
       margin-top: 3px;
-
-      font-size: 8px;
-
-      letter-spacing: 0.25em;
-
-      text-transform: uppercase;
-
       color: var(--champagne);
+      font-size: 8px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
     }
 
-    /* =========================================================
-       12 · UBICACIÓN
-    ========================================================== */
-
-    .location {
-      min-height: 92vh;
-      min-height: 92svh;
-    }
+    /* =========================================
+       07. UBICACIÓN
+    ========================================= */
 
     .location-panel {
       width: min(790px, 100%);
-
       margin: 0 auto;
-
-      padding:
-        clamp(42px, 8vw, 75px)
-        clamp(24px, 7vw, 70px);
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(28, 39, 29, 0.25),
-          rgba(28, 39, 29, 0.07)
-        );
-
-      border-top:
-        1px solid
-        rgba(248, 243, 232, 0.23);
-
-      border-bottom:
-        1px solid
-        rgba(205, 180, 119, 0.28);
-
+      padding: clamp(42px, 8vw, 75px) clamp(24px, 7vw, 70px);
+      background: linear-gradient(
+        135deg,
+        rgba(28,39,29,.32),
+        rgba(28,39,29,.12)
+      );
+      border-top: 1px solid rgba(248,243,232,.23);
+      border-bottom: 1px solid rgba(205,180,119,.35);
       backdrop-filter: blur(3px);
       -webkit-backdrop-filter: blur(3px);
     }
 
     .location-title {
       margin-top: 25px;
-
-      font-family: var(--serif);
-
-      font-size:
-        clamp(
-          2.35rem,
-          5vw,
-          3.8rem
-        );
-
-      font-weight: 400;
-
-      line-height: 1.05;
-
       color: var(--ivory);
+      font-family: var(--serif);
+      font-size: clamp(2.35rem, 5vw, 3.8rem);
+      font-weight: 400;
+      line-height: 1.05;
     }
 
     .location-address {
       margin-top: 28px;
-
-      font-family: var(--serif);
-
-      font-size:
-        clamp(
-          1.2rem,
-          2.5vw,
-          1.45rem
-        );
-
-      line-height: 1.65;
-
       color: var(--ivory-soft);
+      font-family: var(--serif);
+      font-size: clamp(1.2rem, 2.5vw, 1.45rem);
+      line-height: 1.65;
     }
 
     .location-reference {
       margin-top: 19px;
-
-      font-size: 9px;
-
-      letter-spacing: 0.22em;
-
-      text-transform: uppercase;
-
       color: var(--champagne);
+      font-size: 9px;
+      line-height: 1.8;
+      letter-spacing: .16em;
+      text-transform: uppercase;
     }
 
     .map-button {
       display: inline-flex;
-
       align-items: center;
       justify-content: center;
-
-      margin-top: 36px;
-
       min-width: 190px;
-
-      padding:
-        15px
-        28px;
-
-      border:
-        1px solid
-        rgba(205, 180, 119, 0.68);
-
-      background:
-        rgba(38, 49, 38, 0.14);
-
+      margin-top: 36px;
+      padding: 15px 28px;
+      border: 1px solid rgba(205,180,119,.75);
+      background: rgba(38,49,38,.3);
       color: var(--ivory);
-
-      text-decoration: none;
-
       font-size: 9px;
-
-      letter-spacing: 0.27em;
-
+      letter-spacing: .27em;
+      text-decoration: none;
       text-transform: uppercase;
-
       transition:
-        background 0.35s ease,
-        color 0.35s ease,
-        transform 0.35s ease,
-        border-color 0.35s ease;
+        background .35s ease,
+        color .35s ease,
+        transform .35s ease;
     }
 
     .map-button:hover {
-      background: var(--champagne);
-
-      border-color: var(--champagne);
-
-      color: var(--olive-950);
-
       transform: translateY(-2px);
+      border-color: var(--champagne);
+      background: var(--champagne);
+      color: var(--olive-950);
     }
 
-    /* =========================================================
-       13 · CIERRE
-    ========================================================== */
+    /* =========================================
+       08. CIERRE EMOTIVO
+    ========================================= */
 
     .closing {
       min-height: 92vh;
@@ -869,317 +532,119 @@
 
     .closing-quote {
       max-width: 820px;
-
       margin: 0 auto;
-
-      font-family: var(--serif);
-
-      font-size:
-        clamp(
-          2.5rem,
-          6vw,
-          5rem
-        );
-
-      font-weight: 300;
-
-      font-style: italic;
-
-      line-height: 1.05;
-
       color: var(--ivory);
-
-      text-shadow: var(--text-outline);
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.08;
+      text-shadow: var(--text-shadow);
     }
 
     .closing-names {
       margin-top: 42px;
-
-      font-family: var(--display);
-
-      font-size:
-        clamp(
-          3.1rem,
-          7vw,
-          5.7rem
-        );
-
       color: var(--ivory);
-
-      letter-spacing: -0.03em;
+      font-family: var(--display);
+      font-size: clamp(3.1rem, 7vw, 5.7rem);
+      letter-spacing: -.03em;
     }
 
     .closing-date {
       margin-top: 12px;
-
-      font-family: var(--sans);
-
-      font-size: 9px;
-
-      letter-spacing: 0.38em;
-
-      text-transform: uppercase;
-
       color: var(--champagne);
+      font-family: var(--sans);
+      font-size: 9px;
+      letter-spacing: .38em;
+      text-transform: uppercase;
     }
 
     .closing-signature {
-      margin-top: 32px;
-
+      max-width: 560px;
+      margin: 32px auto 0;
+      color: var(--ivory);
       font-family: var(--serif);
-
-      font-size: 1.15rem;
-
+      font-size: clamp(1.2rem, 2.8vw, 1.5rem);
       font-style: italic;
-
-      color: var(--ivory-muted);
+      line-height: 1.5;
     }
 
-    /* =========================================================
-       14 · FOOTER
-    ========================================================== */
+    /* =========================================
+       09. PIE DE PÁGINA
+    ========================================= */
 
     footer {
       position: relative;
-
-      padding:
-        30px
-        20px
-        55px;
-
+      padding: 30px 20px 55px;
       text-align: center;
     }
 
     footer::before {
       content: "";
-
       display: block;
-
       width: 70px;
       height: 1px;
-
-      margin:
-        0
-        auto
-        25px;
-
-      background:
-        linear-gradient(
-          90deg,
-          transparent,
-          var(--champagne),
-          transparent
-        );
-
-      opacity: 0.5;
+      margin: 0 auto 25px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--champagne),
+        transparent
+      );
+      opacity: .5;
     }
 
     footer p {
+      color: rgba(248,243,232,.65);
       font-size: 8px;
-
-      letter-spacing: 0.32em;
-
+      letter-spacing: .32em;
       text-transform: uppercase;
-
-      color: rgba(248, 243, 232, 0.42);
     }
 
-    /* =========================================================
-       15 · REVEAL AL HACER SCROLL
-    ========================================================== */
+    /* =========================================
+       10. ANIMACIONES AL DESPLAZARSE
+    ========================================= */
 
     .reveal {
       opacity: 0;
-
       transform: translateY(28px);
-
       transition:
-        opacity 1s cubic-bezier(.2, .7, .2, 1),
-        transform 1s cubic-bezier(.2, .7, .2, 1);
+        opacity 1s cubic-bezier(.2,.7,.2,1),
+        transform 1s cubic-bezier(.2,.7,.2,1);
     }
 
     .reveal.visible {
       opacity: 1;
-
       transform: translateY(0);
     }
 
-    /* =========================================================
-       16 · DECORACIÓN LATERAL
-    ========================================================== */
-
-    .side-mark {
-      position: absolute;
-
-      width: 75px;
-      height: 75px;
-
-      opacity: 0.35;
-
-      pointer-events: none;
-    }
-
-    .side-mark::before,
-    .side-mark::after {
-      content: "";
-
-      position: absolute;
-
-      background: var(--champagne);
-    }
-
-    .side-mark::before {
-      width: 1px;
-      height: 55px;
-
-      top: 0;
-      right: 0;
-    }
-
-    .side-mark::after {
-      width: 55px;
-      height: 1px;
-
-      top: 0;
-      right: 0;
-    }
-
-    .mark-top {
-      top: 30px;
-      right: 30px;
-    }
-
-    .mark-bottom {
-      bottom: 30px;
-      left: 30px;
-
-      transform: rotate(180deg);
-    }
-
-    /* =========================================================
-       17 · TABLET / MOBILE
-    ========================================================== */
+    /* =========================================
+       11. ADAPTACIÓN A MÓVILES
+    ========================================= */
 
     @media (max-width: 700px) {
       section {
-        padding-left: 18px;
         padding-right: 18px;
+        padding-left: 18px;
       }
 
       .hero {
-        padding-top: 45px;
-        padding-bottom: 65px;
-      }
-
-      .scene-photo {
-        background-position: center center;
+        padding: 45px 18px 65px;
       }
 
       .hero-eyebrow {
         max-width: 310px;
-
-        margin-left: auto;
         margin-right: auto;
-
-        line-height: 1.8;
+        margin-left: auto;
       }
 
       .hero-name {
-        font-size:
-          clamp(
-            4.5rem,
-            21vw,
-            7rem
-          );
+        font-size: clamp(4.5rem, 21vw, 7rem);
       }
 
       .hero-date {
         font-size: 10px;
-        letter-spacing: 0.26em;
-      }
-
-      .story-panel,
-      .location-panel {
-        padding:
-          43px
-          22px;
-      }
-
-      .story-title {
-        font-size:
-          clamp(
-            3.2rem,
-            15vw,
-            4.7rem
-          );
-      }
-
-      .story-copy {
-        font-size: 1.25rem;
-        line-height: 1.55;
-      }
-
-      .wedding-number {
-        font-size:
-          clamp(
-            8rem,
-            37vw,
-            12rem
-          );
-      }
-
-      .wedding-month {
-        margin-top: 42px;
-      }
-
-      .wedding-time {
-        font-size: 1.9rem;
-        letter-spacing: 0.13em;
-        margin-top: 30px;
-      }
-
-      .countdown {
-        gap: 0;
-      }
-
-      .count-item {
-        padding:
-          14px
-          4px;
-      }
-
-      .count-number {
-        font-size: 1.8rem;
-      }
-
-      .count-label {
-        font-size: 7px;
-        letter-spacing: 0.15em;
-      }
-
-      .location-title {
-        font-size: 2.25rem;
-      }
-
-      .location-address {
-        font-size: 1.2rem;
-      }
-
-      .location-reference {
-        font-size: 8.5px;
-      }
-
-      .map-button {
-        font-size: 9px;
-      }
-
-      .closing-quote {
-        font-size:
-          clamp(
-            2.35rem,
-            10vw,
-            3.5rem
-          );
+        letter-spacing: .24em;
       }
 
       .side-mark {
@@ -1204,11 +669,58 @@
         bottom: 20px;
         left: 20px;
       }
-    }
 
-    /* =========================================================
-       18 · PANTALLAS MUY PEQUEÑAS
-    ========================================================== */
+      .wedding-number {
+        font-size: clamp(8rem, 37vw, 12rem);
+      }
+
+      .wedding-time {
+        font-size: 1.7rem;
+        letter-spacing: .12em;
+      }
+
+      .countdown {
+        gap: 0;
+      }
+
+      .count-item {
+        padding: 14px 3px;
+      }
+
+      .count-number {
+        font-size: 1.65rem;
+      }
+
+      .count-label {
+        font-size: 7px;
+        letter-spacing: .12em;
+      }
+
+      .location-panel {
+        padding: 43px 22px;
+      }
+
+      .location-title {
+        font-size: 2.25rem;
+      }
+
+      .location-address {
+        font-size: 1.2rem;
+      }
+
+      .location-reference {
+        font-size: 8px;
+        letter-spacing: .1em;
+      }
+
+      .closing-quote {
+        font-size: clamp(2.35rem, 10vw, 3.5rem);
+      }
+
+      .closing-signature {
+        font-size: 1.2rem;
+      }
+    }
 
     @media (max-width: 380px) {
       .hero-name {
@@ -1217,35 +729,25 @@
 
       .hero-date {
         font-size: 9px;
-        letter-spacing: 0.21em;
+        letter-spacing: .18em;
       }
 
       .count-number {
-        font-size: 1.55rem;
+        font-size: 1.45rem;
       }
 
       .count-label {
         font-size: 6px;
-        letter-spacing: 0.13em;
-      }
-
-      .location-reference {
-        font-size: 8px;
+        letter-spacing: .08em;
       }
     }
-
-    /* =========================================================
-       19 · ACCESIBILIDAD / MENOS MOVIMIENTO
-    ========================================================== */
 
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
       }
 
-      *,
-      *::before,
-      *::after {
+      *, *::before, *::after {
         animation: none !important;
         transition: none !important;
       }
@@ -1254,79 +756,40 @@
         opacity: 1;
         transform: none;
       }
-
-      .hero-content {
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-      }
     }
   </style>
 </head>
 
 <body>
-
   <!-- BARRA DE PROGRESO -->
-
   <div class="progress">
-    <div
-      class="progress-bar"
-      id="progressBar"
-    ></div>
+    <div class="progress-bar" id="progressBar"></div>
   </div>
 
   <!-- FONDO -->
-
-  <div class="scene">
-
-    <div
-      class="scene-photo"
-      id="scenePhoto"
-    ></div>
-
-    <div
-      class="olive-overlay"
-      id="oliveOverlay"
-    ></div>
-
-    <div
-      class="warm-overlay"
-      id="warmOverlay"
-    ></div>
-
+  <div class="scene" aria-hidden="true">
+    <div class="scene-photo" id="scenePhoto"></div>
+    <div class="olive-overlay" id="oliveOverlay"></div>
+    <div class="warm-overlay" id="warmOverlay"></div>
     <div class="vignette"></div>
-
   </div>
 
-  <div class="grain"></div>
+  <div class="grain" aria-hidden="true"></div>
 
   <!-- PORTADA -->
-
   <section class="hero">
-
-    <div class="side-mark mark-top"></div>
-    <div class="side-mark mark-bottom"></div>
+    <div class="side-mark mark-top" aria-hidden="true"></div>
+    <div class="side-mark mark-bottom" aria-hidden="true"></div>
 
     <div class="container hero-content">
-
       <div class="eyebrow hero-eyebrow">
-        Dios, como centro de nuestra historia
+        Dios, centro de nuestra historia
       </div>
 
       <div class="hero-names">
-
-        <div class="hero-name">
-          Samuel
-        </div>
-
-        <div class="hero-amp">
-          e
-        </div>
-
-        <div class="hero-name">
-          Ixkaj
-        </div>
-
+        <div class="hero-name">Samuel</div>
+        <div class="hero-amp">e</div>
+        <div class="hero-name">Ixkaj</div>
       </div>
 
       <div class="hero-date">
@@ -1334,51 +797,29 @@
       </div>
 
       <div class="hairline"></div>
-
       <div class="diamond"></div>
-
     </div>
 
-    <div class="hero-bottom">
-      <span>Descubre</span>
+    <div class="hero-bottom" aria-hidden="true">
+      <span>Desliza para descubrir</span>
       <div class="scroll-line"></div>
     </div>
-
   </section>
 
-  <!-- LA BODA Y CONTADOR -->
-
+  <!-- FECHA Y CUENTA REGRESIVA -->
   <section class="wedding">
-
     <div class="container reveal">
+      <div class="eyebrow">Nuestra fecha</div>
 
-      <div class="eyebrow">
-        La boda
-      </div>
-
-      <div class="wedding-number">
-        19
-      </div>
-
-      <div class="wedding-month">
-        Diciembre
-      </div>
-
-      <div class="wedding-year">
-        2026
-      </div>
+      <div class="wedding-number">19</div>
+      <div class="wedding-month">Diciembre</div>
+      <div class="wedding-year">2026</div>
 
       <div class="hairline"></div>
 
-      <div class="wedding-time">
-        3:00 P. M.
-      </div>
+      <div class="wedding-time">3:00 P. M.</div>
 
-      <div
-        class="countdown"
-        aria-label="Cuenta regresiva para nuestra boda"
-      >
-
+      <div class="countdown" aria-label="Cuenta regresiva para nuestra boda">
         <div class="count-item">
           <span class="count-number" id="days">00</span>
           <span class="count-label">Días</span>
@@ -1398,23 +839,16 @@
           <span class="count-number" id="seconds">00</span>
           <span class="count-label">Segundos</span>
         </div>
-
       </div>
-
     </div>
-
   </section>
 
   <!-- UBICACIÓN -->
-
   <section class="location">
-
     <div class="container">
-
       <div class="location-panel reveal">
-
         <div class="eyebrow">
-          Donde comienza este nuevo capítulo
+          El lugar de nuestra celebración
         </div>
 
         <h2 class="location-title">
@@ -1431,7 +865,7 @@
         </div>
 
         <div class="location-reference">
-          Referencia: Sector de las menonitas
+          Punto de referencia: Sector de las menonitas
         </div>
 
         <a
@@ -1439,23 +873,17 @@
           href="https://maps.app.goo.gl/ENU1dBfwFDbRUKw37"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Abrir ubicación de la boda en Google Maps"
+          aria-label="Abrir la ubicación de la boda en Google Maps"
         >
-          Ver ubicación
+          Cómo llegar
         </a>
-
       </div>
-
     </div>
-
   </section>
 
   <!-- CIERRE -->
-
   <section class="closing">
-
     <div class="container reveal">
-
       <div class="eyebrow closing-label">
         Con amor y gratitud
       </div>
@@ -1468,7 +896,7 @@
       <div class="hairline"></div>
 
       <div class="closing-names">
-        Samuel & Ixkaj
+        Samuel &amp; Ixkaj
       </div>
 
       <div class="closing-date">
@@ -1476,42 +904,40 @@
       </div>
 
       <div class="closing-signature">
-        Dios, como centro de nuestra historia.
+        Será una bendición contar con su presencia en este día tan especial.
       </div>
-
     </div>
-
   </section>
 
   <!-- PIE DE PÁGINA -->
-
   <footer>
-    <p>
-      Samuel e Ixkaj · 19 · XII · 2026
-    </p>
+    <p>Samuel e Ixkaj · 19 · XII · 2026</p>
   </footer>
 
   <!-- JAVASCRIPT -->
-
   <script>
-    /* =========================================================
-       CONTADOR
-    ========================================================== */
+    /* =========================================
+       CUENTA REGRESIVA
+    ========================================= */
 
-    const weddingDate =
-      new Date(
-        "2026-12-19T15:00:00-06:00"
-      ).getTime();
+    const weddingDate = new Date(
+      "2026-12-19T15:00:00-06:00"
+    ).getTime();
+
+    const daysElement = document.getElementById("days");
+    const hoursElement = document.getElementById("hours");
+    const minutesElement = document.getElementById("minutes");
+    const secondsElement = document.getElementById("seconds");
 
     function updateCountdown() {
       const now = Date.now();
       const distance = weddingDate - now;
 
       if (distance <= 0) {
-        document.getElementById("days").textContent = "00";
-        document.getElementById("hours").textContent = "00";
-        document.getElementById("minutes").textContent = "00";
-        document.getElementById("seconds").textContent = "00";
+        daysElement.textContent = "00";
+        hoursElement.textContent = "00";
+        minutesElement.textContent = "00";
+        secondsElement.textContent = "00";
         return;
       }
 
@@ -1520,159 +946,95 @@
       );
 
       const hours = Math.floor(
-        (
-          distance % (1000 * 60 * 60 * 24)
-        ) / (1000 * 60 * 60)
+        (distance % (1000 * 60 * 60 * 24)) /
+        (1000 * 60 * 60)
       );
 
       const minutes = Math.floor(
-        (
-          distance % (1000 * 60 * 60)
-        ) / (1000 * 60)
+        (distance % (1000 * 60 * 60)) /
+        (1000 * 60)
       );
 
       const seconds = Math.floor(
-        (
-          distance % (1000 * 60)
-        ) / 1000
+        (distance % (1000 * 60)) / 1000
       );
 
-      document.getElementById("days").textContent =
-        String(days).padStart(2, "0");
-
-      document.getElementById("hours").textContent =
-        String(hours).padStart(2, "0");
-
-      document.getElementById("minutes").textContent =
-        String(minutes).padStart(2, "0");
-
-      document.getElementById("seconds").textContent =
-        String(seconds).padStart(2, "0");
+      daysElement.textContent = String(days).padStart(2, "0");
+      hoursElement.textContent = String(hours).padStart(2, "0");
+      minutesElement.textContent = String(minutes).padStart(2, "0");
+      secondsElement.textContent = String(seconds).padStart(2, "0");
     }
 
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
-    /* =========================================================
-       BARRA DE PROGRESO Y FONDO
-    ========================================================== */
+    /* =========================================
+       PROGRESO DE LECTURA Y MOVIMIENTO DEL FONDO
+    ========================================= */
 
-    const progressBar =
-      document.getElementById("progressBar");
-
-    const scenePhoto =
-      document.getElementById("scenePhoto");
-
-    const warmOverlay =
-      document.getElementById("warmOverlay");
-
-    const oliveOverlay =
-      document.getElementById("oliveOverlay");
-
-    function updateScene() {
-      const scrollTop = window.scrollY;
-
-      const documentHeight =
-        document.documentElement.scrollHeight -
-        window.innerHeight;
-
-      const progress =
-        documentHeight > 0
-          ? Math.min(
-              1,
-              Math.max(
-                0,
-                scrollTop / documentHeight
-              )
-            )
-          : 0;
-
-      progressBar.style.width =
-        `${progress * 100}%`;
-
-      const photoScale =
-        1.045 + progress * 0.018;
-
-      const photoY =
-        progress * -0.8;
-
-      scenePhoto.style.transform =
-        `scale(${photoScale}) translateY(${photoY}%)`;
-
-      const brightness =
-        1.04 - progress * 0.11;
-
-      const saturation =
-        0.88 + progress * 0.05;
-
-      scenePhoto.style.filter =
-        `brightness(${brightness}) saturate(${saturation}) contrast(1.03)`;
-
-      warmOverlay.style.opacity =
-        0.90 - progress * 0.55;
-
-      oliveOverlay.style.opacity =
-        0.68 + progress * 0.12;
-    }
+    const progressBar = document.getElementById("progressBar");
+    const scenePhoto = document.getElementById("scenePhoto");
+    const warmOverlay = document.getElementById("warmOverlay");
+    const oliveOverlay = document.getElementById("oliveOverlay");
 
     let ticking = false;
 
-    window.addEventListener(
-      "scroll",
-      () => {
-        if (!ticking) {
-          window.requestAnimationFrame(() => {
-            updateScene();
-            ticking = false;
-          });
+    function updateScene() {
+      const scrollTop = window.scrollY;
+      const documentHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
 
-          ticking = true;
-        }
-      },
-      {
-        passive: true
+      const progress = documentHeight > 0
+        ? Math.min(1, Math.max(0, scrollTop / documentHeight))
+        : 0;
+
+      progressBar.style.width = `${progress * 100}%`;
+
+      scenePhoto.style.transform =
+        `scale(${1.045 + progress * 0.018}) translateY(${progress * -0.8}%)`;
+
+      scenePhoto.style.filter =
+        `brightness(${1.04 - progress * 0.11}) saturate(${0.88 + progress * 0.05}) contrast(1.03)`;
+
+      warmOverlay.style.opacity = 0.90 - progress * 0.55;
+      oliveOverlay.style.opacity = 0.68 + progress * 0.12;
+
+      ticking = false;
+    }
+
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateScene);
+        ticking = true;
       }
-    );
+    }, { passive: true });
 
     updateScene();
 
-    /* =========================================================
-       REVEAL DE SECCIONES
-       Respaldo para navegadores sin IntersectionObserver.
-    ========================================================== */
+    /* =========================================
+       APARICIÓN SUAVE DE LAS SECCIONES
+    ========================================= */
 
-    const revealElements =
-      document.querySelectorAll(".reveal");
+    const revealElements = document.querySelectorAll(".reveal");
 
     if ("IntersectionObserver" in window) {
-      const revealObserver =
-        new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-
-                revealObserver.unobserve(
-                  entry.target
-                );
-              }
-            });
-          },
-          {
-            threshold: 0.16
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
           }
-        );
+        });
+      }, { threshold: 0.16 });
 
       revealElements.forEach((element) => {
         revealObserver.observe(element);
       });
-
     } else {
       revealElements.forEach((element) => {
         element.classList.add("visible");
       });
     }
   </script>
-
 </body>
 </html>
